@@ -1,0 +1,467 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ashe">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout">
+
+            <TextView
+                android:id="@+id/campid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:visibility="invisible"/>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/ashe1"
+                        android:layout_margin="@dimen/card_margin1">
+
+                        <LinearLayout
+                            style="@style/Widget.CardContent"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:id="@+id/campImg"
+                                android:scaleType="fitCenter"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:background="@mipmap/influencerlistimg"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true" />
+
+
+                            <TextView
+                                android:id="@+id/campName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/orange"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="Campaign Name"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"
+                                android:fontFamily="sans-serif-condensed"
+                                android:textSize="28sp" />
+
+                            <TextView
+                                android:id="@+id/campCat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/orangenew"
+                                android:gravity="center"
+                                android:text="Categories"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="10dp"
+                                android:layout_gravity="center"
+                                android:fontFamily="sans-serif-condensed"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardview0"
+                        android:layout_margin="@dimen/card_margin1">
+                        <LinearLayout
+                            style="@style/Widget.CardContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/campshbrieftext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Short Brief : "
+                                android:textStyle="bold"
+                                android:layout_below="@+id/campname"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingTop="5dp"
+                                android:textSize="20sp"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                            <ScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/campShortNote"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:paddingTop="5dp" />
+
+                            </ScrollView>
+
+                            <View
+                                android:id="@+id/linee"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center"
+                                android:layout_below="@+id/campShortNote"
+                                android:background="@color/lite_ashe" />
+
+
+
+                            <TextView
+                                android:id="@+id/camplgbrieftext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Long Brief : "
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:layout_below="@+id/campname"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingTop="5dp"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                            <ScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/campLongNote"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:paddingTop="5dp" />
+
+                            </ScrollView>
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardview"
+                        android:layout_margin="@dimen/card_margin1">
+                        <LinearLayout
+                            style="@style/Widget.CardContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/eligibilitytext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Goal : "
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingTop="5dp"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                            <TextView
+                                android:id="@+id/campGoal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:paddingTop="5dp" />
+
+                            <View
+                                android:id="@+id/line"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center"
+                                android:layout_below="@+id/campGoal"
+                                android:background="@color/lite_ashe" />
+
+                            <TextView
+                                android:id="@+id/campdotext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Do's : "
+                                android:textSize="20sp"
+                                android:paddingTop="5dp"
+                                android:textStyle="bold"
+                                android:fontFamily="sans-serif-condensed"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                            <TextView
+                                android:id="@+id/campDos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:paddingTop="5dp" />
+                            <View
+                                android:id="@+id/line00"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center"
+                                android:layout_below="@+id/campDos"
+                                android:background="@color/lite_ashe" />
+                            <TextView
+                                android:id="@+id/campdonttext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Don'ts : "
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:paddingTop="5dp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                            <TextView
+                                android:id="@+id/campDont"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:paddingTop="5dp" />
+                            <View
+                                android:id="@+id/line01"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center"
+                                android:layout_below="@+id/campDont"
+                                android:background="@color/lite_ashe" />
+                            <TextView
+                                android:id="@+id/applytilltext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Apply Till : "
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:paddingTop="5dp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                            <TextView
+                                android:id="@+id/campApplyTill"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:paddingTop="5dp" />
+                            <View
+                                android:id="@+id/line02"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center"
+                                android:layout_below="@+id/applytill"
+                                android:background="@color/lite_ashe" />
+
+                            <TextView
+                                android:id="@+id/camprewardstext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Rewards : "
+                                android:paddingTop="5dp"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                            <TextView
+                                android:id="@+id/campRewards"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:paddingTop="5dp" />
+                            <View
+                                android:id="@+id/line03"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center"
+                                android:layout_below="@+id/campRewards"
+                                android:background="@color/lite_ashe" />
+
+                            <TextView
+                                android:id="@+id/rewardtypetext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Campaign Type : "
+                                android:textStyle="bold"
+                                android:paddingTop="5dp"
+                                android:textSize="20sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                            <TextView
+                                android:id="@+id/campRewardType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:paddingTop="5dp" />
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardview1"
+                        android:layout_margin="@dimen/card_margin1">
+                        <LinearLayout
+                            style="@style/Widget.CardContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tagtext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tag : "
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:layout_below="@+id/campname"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingTop="5dp"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                            <ScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/campTag"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:paddingTop="5dp" />
+
+                            </ScrollView>
+
+                            <View
+                                android:id="@+id/line04"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center"
+                                android:layout_below="@+id/campTag"
+                                android:background="@color/lite_ashe" />
+                            <TextView
+                                android:id="@+id/campbacklinktext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Campaign Link : "
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:layout_below="@+id/campname"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingTop="5dp"
+                                android:textColor="@color/orange"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                            <ScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/campBacklink"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:paddingTop="5dp" />
+
+                            </ScrollView>
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <Button
+                        android:layout_width="250sp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/campaignclosed"
+                        android:background="@drawable/rounded_corner_button_ash"
+                        android:visibility="invisible"
+                        android:text="CAMPAIGN CLOSED"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="sans-serif"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_below="@+id/cardview2"
+                        android:layout_centerHorizontal="true" />
+
+                    <Button
+                        android:layout_width="250sp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/applynow"
+                        android:background="@drawable/rounded_corner_button"
+                        android:visibility="invisible"
+                        android:text="APPLY NOW"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="sans-serif"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_below="@+id/cardview2"
+                        android:layout_centerHorizontal="true" />
+
+                    <Button
+                        android:layout_width="250sp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/alreadyapplied"
+                        android:background="@drawable/rounded_corner_button_orange"
+                        android:visibility="invisible"
+                        android:text="ALREADY APPLIED"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="sans-serif"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_below="@+id/cardview2"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/fixedamount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:layout_marginBottom="10dp"
+                        android:paddingTop="5dp"
+                        android:layout_below="@id/alreadyapplied"/>
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

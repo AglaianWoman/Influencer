@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="5dip">
+
+
+            <LinearLayout android:id="@+id/thumbnail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="5dip">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@mipmap/notification_icon_label"
+                    android:id="@+id/notifyimg" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/thumbnail"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Influencer App Notification"
+                android:textColor="@color/black"
+                android:textSize="18dip" />
+
+
+            <!-- Rightend Duration -->
+            <TextView
+                android:id="@+id/datetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/message"
+                android:layout_marginTop="10dp"
+                android:gravity="right"
+                android:text="01-01-2017 00:00 AM"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginRight="5dip"
+                android:textSize="14dp"
+                android:textColor="@color/orangenew"/>
+
+    <TextView
+        android:id="@+id/notificationid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:singleLine="true"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/notificationtype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:singleLine="true"
+        android:textSize="10sp" />
+
+</RelativeLayout>

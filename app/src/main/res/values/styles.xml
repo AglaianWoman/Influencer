@@ -1,0 +1,86 @@
+<resources>
+
+    <style
+        name="AppTheme"
+        parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/actionbarcolour</item>
+        <item name="colorPrimaryDark">@color/actionbarcolourdark1</item>
+        <item name="colorAccent">@color/violet</item>
+    </style>
+    <style name="WhiteCheck">
+        <item name="colorAccent">#fff</item>
+    </style>
+    <style
+        name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style
+        name="AppTheme.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style
+        name="AppTheme.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light" />
+
+    <style
+        name="ActionBarTheme"
+        parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/actionbarcolour</item>
+        <item name="colorPrimaryDark">@color/actionbarcolourdark</item>
+        <item name="colorAccent">@color/orange</item>
+    </style>
+
+    <style
+        name="Widget.CardContent"
+        parent="android:Widget">
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:orientation">vertical</item>
+        <!--<item name="android:paddingLeft">16dp</item>-->
+        <!--<item name="android:paddingRight">16dp</item>-->
+        <!--<item name="android:paddingTop">24dp</item>-->
+        <!--<item name="android:paddingBottom">24dp</item>-->
+        <!--<item name="android:orientation">vertical</item>-->
+    </style>
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+
+    </style>
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/actionbarcolour</item>
+        <item name="colorPrimaryDark">@color/actionbarcolourdark1</item>
+        <item name="colorAccent">@color/violet</item>
+    </style>
+
+    <style name="expandedappbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">48sp</item>
+        <item name="android:textColor">@color/orangenew</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="collapsedappbar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppThemed" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/actionbarcolour</item>
+        <item name="colorPrimaryDark">@color/actionbarcolourdark1</item>
+        <item name="colorAccent">@color/violet</item>
+    </style>
+
+</resources>

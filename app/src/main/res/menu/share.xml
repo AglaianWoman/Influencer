@@ -1,0 +1,47 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item   android:id="@+id/nav_lifestyle"
+            android:icon="@mipmap/lifestyle_icon"
+            android:title="Lifestyle"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom|withText"/>
+    <item   android:id="@+id/nav_food"
+            android:icon="@mipmap/food_icon"
+            android:title="Food"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom|withText"/>
+    <item   android:id="@+id/nav_fashion"
+            android:icon="@mipmap/fashion_icon"
+            android:title="Fashion"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom|withText"/>
+    <item   android:id="@+id/nav_technology"
+            android:icon="@mipmap/technology_icon"
+            android:title="Technology"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom|withText"/>
+    <item   android:id="@+id/nav_travel"
+            android:icon="@mipmap/travel_icon"
+            android:title="Travel"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom|withText"/>
+    <item   android:id="@+id/nav_investment"
+            android:icon="@mipmap/investment_icon"
+            android:title="Investment"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom|withText"/>
+    <item   android:id="@+id/nav_ecommerce"
+            android:icon="@mipmap/ecommerce_icon"
+            android:title="Ecommerce"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom|withText"/>
+
+    <item   android:id="@+id/nav_parenting"
+            android:icon="@mipmap/parenting"
+            android:title="Parenting"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom|withText"/>
+
+</menu>

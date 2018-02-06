@@ -1,0 +1,243 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginSmsActivity">
+
+    <com.socialbeat.influencer.helper.MyViewPager
+        android:id="@+id/viewPagerVertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout_sms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framenew"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:background="@color/actionbarcolour"
+                android:scaleType="centerCrop">
+            </FrameLayout>
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/influencerheader400"
+                android:layout_marginTop="100dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/imageView3" />
+
+            <LinearLayout
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="120dp">
+
+                <!--<TextView-->
+                    <!--android:id="@+id/head"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Rewardify Login"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:textSize="34dp"-->
+                    <!--android:gravity="center" />-->
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/framenew"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Please confirm your mobile number"
+                    android:layout_marginTop="10sp"
+                    android:textColor="@color/orange"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="20dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/head1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Authenticate Via OTP"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_marginTop="10sp"
+                    android:textColor="@color/orange"
+                    android:textSize="20dp"
+                    android:gravity="center" />
+
+                <EditText
+                    android:id="@+id/inputMobile"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mobile Number"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginRight="46dp"
+                    android:layout_gravity="center"
+                    android:textColorHint="@color/transperent"
+                    android:textColor="@color/orangenew"
+                    android:background="#0000"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:inputType="phone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="56dp"
+                    android:layout_marginRight="56dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/transperent"/>
+
+                <Button
+                    android:id="@+id/btn_request_sms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/orange"
+                    android:text="@string/lbl_next"
+                    android:textSize="20sp"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginRight="120dp"
+                    android:padding="9dp"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_otp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@mipmap/background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="50dp"
+            android:src="@mipmap/influencerheader400" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/msg_sit_back"
+            android:textColor="@android:color/white"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:gravity="center_horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/msg_manual_otp"
+            android:textColor="@android:color/white"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/inputOtp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_horizontal"
+            android:hint="@string/lbl_enter_otp"
+            android:textStyle="bold"
+            android:textColorHint="@color/transperent"
+            android:textColor="@color/orangenew"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="10dp"
+            android:textCursorDrawable="@null"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btn_verify_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:background="@color/orangenew"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/lbl_submit"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:visibility="visible" />
+
+   </LinearLayout>
+
+</com.socialbeat.influencer.helper.MyViewPager>
+
+<ProgressBar
+android:id="@+id/progressBar"
+android:layout_width="30dp"
+android:layout_height="30dp"
+android:layout_alignParentBottom="true"
+android:layout_centerHorizontal="true"
+android:layout_gravity="center"
+android:layout_marginBottom="60dp"
+android:indeterminateTint="@color/orange"
+android:indeterminateTintMode="src_atop"
+android:visibility="gone" />
+
+<LinearLayout
+android:id="@+id/layout_edit_mobile"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:layout_marginBottom="50dp"
+android:gravity="center"
+android:orientation="horizontal">
+
+<TextView
+    android:id="@+id/txt_edit_mobile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@android:color/white"
+    android:textSize="16dp" />
+
+<ImageButton
+    android:id="@+id/btn_edit_mobile"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginLeft="10dp"
+    android:background="@null"
+    android:src="@mipmap/ic_edit_mobile" />
+
+</LinearLayout>
+</RelativeLayout>

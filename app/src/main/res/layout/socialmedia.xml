@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.design.widget.CoordinatorLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/coordinatorLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="SOCIAL MEDIA AUTHENTICATION"
+            android:textColor="@color/orange"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textStyle="normal"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/facebooktext"
+            android:layout_marginTop="25dp" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="250dp"
+            android:layout_height="100sp"
+            android:gravity="center"
+            android:background="@color/com_facebook_blue"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="30dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+            android:id="@+id/fb_profileimage"
+            android:padding="3dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:background="@mipmap/user_icon_new"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="10sp"
+            android:text="UserId"
+            android:textColor="@color/com_facebook_blue"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="230dp"
+            android:id="@+id/tvuserid"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="10sp"
+            android:text="UserName"
+            android:textColor="@color/com_facebook_blue"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="260dp"
+            android:id="@+id/tvusername"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="10sp"
+            android:text="UserEmail"
+            android:textColor="@color/com_facebook_blue"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="290dp"
+            android:id="@+id/tvuseremail"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="10sp"
+            android:text="UserGender"
+            android:textColor="@color/com_facebook_blue"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="320dp"
+            android:id="@+id/tvusergender"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="10sp"
+            android:text="UserBirthday"
+            android:textColor="@color/com_facebook_blue"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="350dp"
+            android:id="@+id/tvuserbirthday"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="10sp"
+            android:text="About User"
+            android:textColor="@color/com_facebook_blue"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="380dp"
+            android:id="@+id/tvuserabout"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="10sp"
+            android:text="USER PAGES : "
+            android:textColor="@color/com_facebook_blue"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="430dp"
+            android:id="@+id/tvuserpages"/>
+
+
+        <!--<Button-->
+        <!--android:layout_width="150sp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="clear"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:background="@color/com_facebook_blue"-->
+        <!--android:textSize="20sp"-->
+        <!--android:visibility="invisible"-->
+        <!--android:fontFamily="sans-serif-condensed"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="480dp"-->
+        <!--android:id="@+id/logout_button"/>-->
+
+        <ListView
+            android:id="@+id/pagevalues"
+            android:layout_width="fill_parent"
+            android:layout_height="1400sp"
+            android:layout_marginLeft="5sp"
+            android:layout_below="@+id/tvuserpages"
+            android:layout_marginRight="5sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="15sp" />
+
+    </RelativeLayout>
+
+        </ScrollView>
+
+<!--</android.support.design.widget.CoordinatorLayout>-->

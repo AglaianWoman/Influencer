@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@mipmap/splash_screen_bg"
+    tools:context=".SplashScreenActivity">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        android:background="@mipmap/splash_screen_logo"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/splash_screen_name"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/influencertext" />
+
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="5sp"
+        android:text="\u00a9 2017 SOCIAL BEAT DIGITAL MARKETING LLP"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/copyright"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="7sp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="A Product of Social Beat" />
+
+
+
+</RelativeLayout>

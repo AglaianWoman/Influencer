@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <item
+        android:id="@+id/refreshcamp"
+        android:title="Refresh"
+        android:orderInCategory="10"
+        android:icon="@mipmap/refresh_icon"
+        app:showAsAction="ifRoom" />
+
+</menu>

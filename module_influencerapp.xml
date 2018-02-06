@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_influencerapp" default="compile.module.influencerapp">
+  <dirname property="module.influencerapp.basedir" file="${ant.file.module_influencerapp}"/>
+  
+  <property name="module.jdk.home.influencerapp" value="${jdk.home.1.8}"/>
+  <property name="module.jdk.bin.influencerapp" value="${jdk.bin.1.8}"/>
+  <property name="module.jdk.classpath.influencerapp" value="jdk.classpath.1.8"/>
+  
+  <property name="compiler.args.influencerapp" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="influencerapp.output.dir" value="${module.influencerapp.basedir}/build/classes/production/Influencerapp"/>
+  <property name="influencerapp.testoutput.dir" value="${module.influencerapp.basedir}/build/classes/test/Influencerapp"/>
+  
+  <path id="influencerapp.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="influencerapp.module.production.classpath">
+    <path refid="${module.jdk.classpath.influencerapp}"/>
+  </path>
+  
+  <path id="influencerapp.runtime.production.module.classpath">
+    <pathelement location="${influencerapp.output.dir}"/>
+  </path>
+  
+  <path id="influencerapp.module.classpath">
+    <path refid="${module.jdk.classpath.influencerapp}"/>
+    <pathelement location="${influencerapp.output.dir}"/>
+  </path>
+  
+  <path id="influencerapp.runtime.module.classpath">
+    <pathelement location="${influencerapp.testoutput.dir}"/>
+    <pathelement location="${influencerapp.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.influencerapp">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.influencerapp">
+    <patternset refid="excluded.from.module.influencerapp"/>
+  </patternset>
+  
+  
+  <target name="compile.module.influencerapp" depends="compile.module.influencerapp.production,compile.module.influencerapp.tests" description="Compile module Influencerapp"/>
+  
+  <target name="compile.module.influencerapp.production" depends="register.custom.compilers" description="Compile module Influencerapp; production classes"/>
+  
+  <target name="compile.module.influencerapp.tests" depends="register.custom.compilers,compile.module.influencerapp.production" description="compile module Influencerapp; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.influencerapp" description="cleanup module">
+    <delete dir="${influencerapp.output.dir}"/>
+    <delete dir="${influencerapp.testoutput.dir}"/>
+  </target>
+</project>

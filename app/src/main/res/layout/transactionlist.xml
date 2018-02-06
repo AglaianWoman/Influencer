@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ashe"
+    android:id="@+id/scrollView"
+    app:layout_collapseParallaxMultiplier="1.0">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        android:layout_margin="@dimen/card_margin3">
+
+        <LinearLayout
+            style="@style/Widget.CardContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="80sp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dip">
+
+
+                <ImageView
+                    android:id="@+id/tran_img"
+                    android:layout_width="75sp"
+                    android:layout_height="75sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@mipmap/paytm_icon" />
+
+                <TextView
+                    android:id="@+id/campname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:ems="14"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="5sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_toEndOf="@+id/tran_img"
+                    android:layout_toRightOf="@+id/tran_img"
+                    android:text="CAMPAIGN NAME" />
+
+                <TextView
+                    android:id="@+id/txid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/campname"
+                    android:layout_alignStart="@+id/campname"
+                    android:layout_centerVertical="true"
+                    android:ems="9"
+                    android:layout_marginTop="5sp"
+                    android:text="Transaction Id"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="9"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/transperent"
+                    android:layout_alignLeft="@+id/txid"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/txid"
+                    android:text="DATE" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="Amount"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5sp"
+                    android:textColor="@color/orangenew"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignTop="@+id/txid"
+                    android:layout_toRightOf="@+id/txid"
+                    android:layout_toEndOf="@+id/txid" />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/txtype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+    </android.support.v7.widget.CardView>
+</ScrollView>

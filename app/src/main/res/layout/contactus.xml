@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ashe">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+
+
+            <RelativeLayout
+                android:id="@+id/rlay1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardview"
+                    android:layout_width="match_parent"
+                    android:layout_height="230sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="@dimen/card_margin1"
+                    android:layout_marginTop="30dp" >
+
+                    <LinearLayout
+                        android:id="@+id/linear1"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:background="@drawable/bordercolor"
+                        android:layout_gravity="top"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/ccompanyname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="Social Beat - Chennai"
+                            android:textStyle="bold"
+                            android:textColor="@color/orangenew"
+                            android:textSize="25sp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/ccompanyaddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="143sp"
+                        android:layout_marginTop="47sp"
+                        android:background="@drawable/bordercolor"
+                        android:gravity="center"
+                        android:layout_below="@+id/linear1"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textAlignment="center"
+                        android:text="@string/chennai_address"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+
+                    <LinearLayout
+                        android:id="@+id/linear2"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:background="@color/orangenew"
+                        android:layout_gravity="bottom"
+                        android:gravity="center">
+
+
+                        <Button
+                            android:id="@+id/cmap"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:background="@mipmap/mapicon" />
+
+                        <Button
+                            android:id="@+id/ccall"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:layout_marginLeft="50sp"
+                            android:background="@mipmap/callicon" />
+
+                        <Button
+                            android:id="@+id/cmail"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:layout_marginLeft="50sp"
+                            android:background="@mipmap/mailicon" />
+
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="230sp"
+                    android:layout_below="@+id/cardview"
+                    android:layout_margin="@dimen/card_margin1"
+                    android:layout_marginTop="30dp" >
+
+                    <LinearLayout
+                        android:id="@+id/linear11"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:background="@drawable/bordercolor"
+                        android:layout_gravity="top"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/bcompanyname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="Social Beat - Bangalore"
+                            android:textStyle="bold"
+                            android:textColor="@color/orangenew"
+                            android:textSize="25sp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/bcompanyaddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="143sp"
+                        android:layout_marginTop="47sp"
+                        android:background="@drawable/bordercolor"
+                        android:gravity="center"
+                        android:fontFamily="sans-serif-condensed"
+                        android:layout_below="@+id/linear1"
+                        android:layout_centerHorizontal="true"
+                        android:textAlignment="center"
+                        android:text="@string/bangalore_address"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+
+                    <LinearLayout
+                        android:id="@+id/linear22"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:background="@color/orangenew"
+                        android:layout_gravity="bottom"
+                        android:gravity="center">
+
+
+                        <Button
+                            android:id="@+id/bmap"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:background="@mipmap/mapicon" />
+
+                        <Button
+                            android:id="@+id/bcall"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:layout_marginLeft="50sp"
+                            android:background="@mipmap/callicon" />
+
+                        <Button
+                            android:id="@+id/bmail"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:layout_marginLeft="50sp"
+                            android:background="@mipmap/mailicon" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="230sp"
+                    android:layout_below="@+id/cardview1"
+                    android:layout_margin="@dimen/card_margin1"
+                    android:layout_marginTop="30dp" >
+
+                    <LinearLayout
+                        android:id="@+id/linear111"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:background="@drawable/bordercolor"
+                        android:layout_gravity="top"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/mcompanyname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="Social Beat - Mumbai"
+                            android:textStyle="bold"
+                            android:textColor="@color/orangenew"
+                            android:textSize="25sp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/mcompanyaddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="143sp"
+                        android:layout_marginTop="47sp"
+                        android:background="@drawable/bordercolor"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:layout_below="@+id/linear1"
+                        android:layout_centerHorizontal="true"
+                        android:textAlignment="center"
+                        android:text="@string/mumbai_address"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+
+                    <LinearLayout
+                        android:id="@+id/linear222"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:background="@color/orangenew"
+                        android:layout_gravity="bottom"
+                        android:gravity="center">
+
+
+                        <Button
+                            android:id="@+id/mmap"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:background="@mipmap/mapicon" />
+
+                        <Button
+                            android:id="@+id/mcall"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:layout_marginLeft="50sp"
+                            android:background="@mipmap/callicon" />
+
+                        <Button
+                            android:id="@+id/mmail"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:layout_marginLeft="50sp"
+                            android:background="@mipmap/mailicon" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

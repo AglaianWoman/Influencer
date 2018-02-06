@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@mipmap/star"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/nav_mycampaigns"
+            android:icon="@mipmap/mycampaign_clr"
+            android:title="My Campaigns" />
+        <item
+            android:id="@+id/nav_myearnings"
+            android:icon="@mipmap/bulbnew"
+            android:title="My Earnings" />
+        <item
+            android:id="@+id/nav_ourblog"
+            android:icon="@mipmap/blogger"
+            android:title="Our Blog" />
+        <item
+            android:id="@+id/nav_manageinterests"
+            android:icon="@mipmap/list"
+            android:title="Manage Interests" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@mipmap/more_icon_clr"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_contactus"
+            android:icon="@mipmap/mails"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@mipmap/out"
+            android:title="Logout" />
+
+    </group>
+</menu>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#fd3339</color>
+    <color name="colorPrimaryDark">#d9292f</color>
+
+    <!--<color name="colorPrimary">#ff0173</color>-->
+    <!--<color name="colorPrimaryDark">#C51162</color>-->
+    <color name="coloraccent">#0fd45b</color>
+    <color name="colorAccent">#0fd45b</color>
+    <color name="colorAccentdark">#0cac4a</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccentnew">#F50057</color>
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#b6b6b6</color>
+    <color name="blue">#81DAF5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="ashe">#D8D8D8</color>
+    <color name="ashe1">#f5f5f5</color>
+    <color name="dark_ashe">#626262</color>
+    <color name="lite_ashe">#e1e1e1</color>
+    <color name="red">#FA1111</color>
+    <!--<color name="actionbarcolour">#c5c4c4</color>-->
+    <color name="actionbarcolourdark">#414141</color>
+    <color name="actionbarcolour">#1baf99</color>
+    <color name="orangenew">#1baf99</color>
+    <color name="actionbarcolourdark1">#178f7e</color>
+    <color name="transperent">#80000000</color>
+    <color name="orange">#ff6017</color>
+    <color name="violet">#1e9cb2</color>
+    <color name="violet1">#8717ff</color>
+    <color name="darkpink">#ff17c5</color>
+    <color name="cardclr">#949696</color>
+    <color name="darkashe">#2f2f2f</color>
+    <color name="darkblue">#1e9cb2</color>
+    <color name="yellow">#f7eb02</color>
+    <color name="sandal">#ffc684</color>
+
+
+</resources>

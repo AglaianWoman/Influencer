@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:paddingLeft="5dp"
+    android:background="@color/ashe"
+    android:paddingRight="5dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="220sp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_margin="@dimen/card_margin1"
+        app:cardCornerRadius="10dp"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:id="@+id/topone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/campname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15sp"
+                android:typeface="sans"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"
+                android:textColor="@color/list_background_pressed"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:text="Campaigns Name"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5sp"
+                android:layout_below="@+id/campname"
+                android:background="@color/ashe"/>
+
+            <LinearLayout
+                android:id="@+id/linearone"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:gravity="center"
+                android:layout_marginTop="50sp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/applied_status"
+                    android:layout_width="110sp"
+                    android:layout_height="80sp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+                    <TextView
+                        android:id="@+id/campappliedtext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Applied"
+                        android:singleLine="false"
+                        android:typeface="sans"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="5sp"
+                        android:textColor="@color/actionbarcolour"
+                        android:textSize="15sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:id="@+id/campappliedtext1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Status"
+                        android:fontFamily="sans-serif"
+                        android:singleLine="false"
+                        android:textColor="@color/actionbarcolour"
+                        android:textSize="15sp"
+                        android:typeface="sans"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/campappliedstatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Completed"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5sp"
+                        android:textColor="@color/list_background_pressed"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80sp"
+                    android:layout_marginRight="5sp"
+                    android:layout_marginLeft="5sp"
+                    android:layout_gravity="center"
+                    android:background="@color/ashe"/>
+
+                <LinearLayout
+                    android:id="@+id/payment_status"
+                    android:layout_width="110sp"
+                    android:layout_height="80sp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+                    <TextView
+                        android:id="@+id/camppaymenttext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment"
+                        android:singleLine="false"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="5sp"
+                        android:textColor="@color/actionbarcolour"
+                        android:textSize="15sp"
+                        android:typeface="sans"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/camppaymenttext1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status"
+                        android:singleLine="false"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/actionbarcolour"
+                        android:textSize="15sp"
+                        android:typeface="sans"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/camppaymentstatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Completed"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5sp"
+                        android:textColor="@color/list_background_pressed"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80sp"
+                    android:layout_marginRight="5sp"
+                    android:layout_marginLeft="5sp"
+                    android:layout_gravity="center"
+                    android:background="@color/ashe"/>
+
+                <LinearLayout
+                    android:id="@+id/delivery_status"
+                    android:layout_width="110sp"
+                    android:layout_height="80sp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+                    <TextView
+                        android:id="@+id/campdeliverytext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery"
+                        android:singleLine="false"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="5sp"
+                        android:textColor="@color/actionbarcolour"
+                        android:textSize="15sp"
+                        android:typeface="sans"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/campdeliverytext1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status"
+                        android:singleLine="false"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/actionbarcolour"
+                        android:textSize="15sp"
+                        android:typeface="sans"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/campdeliverystatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Completed"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5sp"
+                        android:textColor="@color/list_background_pressed"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:id="@+id/bottomline"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5sp"
+                android:layout_below="@+id/linearone"
+                android:background="@color/ashe"/>
+
+            <LinearLayout
+                android:id="@+id/linearfour"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:gravity="center"
+                android:layout_below="@+id/bottomline"
+                android:layout_marginTop="10sp"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/applied_amount"
+                android:layout_width="110sp"
+                android:layout_height="60sp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:id="@+id/campaignquotext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quote Amount"
+                    android:singleLine="false"
+                    android:typeface="sans"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/actionbarcolour"
+                    android:textSize="15sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/campaignquote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="000000"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/list_background_pressed"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="80sp"
+                android:layout_marginRight="5sp"
+                android:layout_marginLeft="5sp"
+                android:layout_gravity="center"
+                android:background="@color/ashe"/>
+
+            <LinearLayout
+                android:id="@+id/applied_date"
+                android:layout_width="110sp"
+                android:layout_height="60sp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:id="@+id/appdatetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Applied Date"
+                    android:singleLine="false"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/actionbarcolour"
+                    android:textSize="15sp"
+                    android:typeface="sans"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+
+                <TextView
+                    android:id="@+id/campapplieddate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DD-MM-YYYY"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/list_background_pressed"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/cid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/campid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/bloglink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tweetlink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true" />
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

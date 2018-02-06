@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item   android:id="@+id/nav_add"
+        android:title="@string/add"
+        android:icon="@mipmap/add_icon"
+        app:showAsAction="always|withText"/>
+
+
+
+</menu>

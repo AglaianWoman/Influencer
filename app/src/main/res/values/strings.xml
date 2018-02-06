@@ -1,0 +1,97 @@
+<resources>
+
+    <string name="app_name">Influencer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="city">Select City</string>
+    <string name="fointerest">Field of Interest</string>
+    <string name="action_settings">Settings</string>
+    <string name="navigation_item_1">Home</string>
+    <string name="navigation_item_2">Events</string>
+    <string name="starred_string">Starred</string>
+    <string name="inbox_string">Inbox</string>
+    <string name="sent_mail_string">Sent mail</string>
+    <string name="draft_string">Drafts</string>
+    <string name="subheader">Subheader</string>
+    <string name="trash_string">Trash</string>
+    <string name="all_mail_string">All mails</string>
+    <string name="spam_string">Spams</string>
+    <string name="closeDrawer">Navigation View</string>
+    <string name="openDrawer">Navigation View Closed</string>
+    <string name="foi">Select Field of Interest</string>
+    <string name="drawer_open">Open Drawer</string>
+    <string name="drawer_close">Close Drawer</string>
+    <string name="sender_id">908044313447</string>
+    <string name="rs">\u20B9</string>
+
+    <string-array name="delivery_status">
+        <item>Completed</item>
+        <item>Pending</item>
+    </string-array>
+
+    <!-- twitter_icon_glass Configurations -->
+    <string name="twitter_callback">http://influencer.in</string>
+    <string name="twitter_consumer_key">QH2Cs7MEtUYgywKyrakBbhngQ</string>
+    <string name="twitter_consumer_secret">azzcpCNzx44Jaf1LMWerKMRdkmfFdSbhN8kmC4vHwuojIQe9m9</string>
+    <string name="twitter_oauth_verifier">oauth_verifier</string>
+    <string name="hello">Hello, </string>
+    <string name="login_instructions">Login to twiter</string>
+    <string name="share_instructions">Enter share message</string>
+    <!-- End Configurations -->
+
+    <string name="title_activity_sms">SmsActivity</string>
+    <string name="action_logout">Logout</string>
+    <string name="msg_enter_mobile">Enter your information to get started!</string>
+    <string name="msg_enter_msg">Enter your mobile no to get started!</string>
+    <string name="lbl_name">Name</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_mobile">Mobile</string>
+    <string name="lbl_location">Location</string>
+    <string name="lbl_next">NEXT</string>
+    <string name="msg_sit_back">Sit back &amp; Relax! while we verify your mobile number</string>
+    <string name="msg_manual_otp">(Enter the OTP below in case if we fail to detect the SMS automatically)</string>
+    <string name="lbl_enter_otp">Enter OTP</string>
+    <string name="lbl_submit">SUBMIT</string>
+    <string name="login_terms">By Signing with us, you agree to the Influencer <a href="http://www.influencer.in/terms-and-conditions/" target="_blank"> Terms &amp; Conditions.</a></string>
+    <string name="register_terms">By signing up with us, you agree to the Influencer <a href="http://www.influencer.in/terms-and-conditions/"> Terms &amp; Conditions.</a></string>
+    <string name="skip"><u>SKIP</u></string>
+    <string name="cancel"><u>CANCEL</u></string>
+    <string name="settings">Settings</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="chennai_address">No:338 6th Floor,\n Fountain Plaza, Pantheon Rd,\n Egmore, Chennai,\n  Tamil Nadu 600008,India</string>
+    <string name="bangalore_address">No:22, 15th Cross Rd,\n Sector 4, HSR layout,\n Bengaluru,\n Karnataka 560102, India</string>
+    <string name="mumbai_address">B Wing, 5th floor,\n Ackruti Trade Centre, MIDC,\n Andheri (E),Mumbai,\n Maharashtra 400093, India</string>
+
+    <string name="compose_shortcut_short_label">DashBoard</string>
+    <string name="compose_shortcut_short_label1">Contact Us</string>
+
+    <!-- API Configurations -->
+    <string name="base_url">https://www.influencer.in/API/v4/</string>
+
+    <string name="device_details_url">androidRegistration1.php</string>
+    <string name="regsitration_one_url">androidUserRegister.php</string>
+    <!--<string name="regsitration_two_url">updateCustomer.php</string>-->
+    <string name="login_url">login.php</string>
+    <string name="forgotpassword_url">forgotPassword.php</string>
+    <string name="live_campaign_url">getnewlivecampaign.php</string>
+    <string name="past_campaign_url">getnewpastcampaign.php</string>
+    <string name="notification_manager_url">notificationmanager.php</string>
+    <string name="applied_list_url">checkAppliedList.php</string>
+    <string name="apply_camp_with_quote_url">applyCampaign.php</string>
+    <string name="apply_camp_without_quote_url">applyCampaignwithoutquote.php</string>
+
+    <string name="transaction_history_url">transactionhistory.php</string>
+    <string name="paytm_recharge_url">gratification.php</string>
+    <string name="wallet_balance_url">checkwalletbalance.php</string>
+    <string name="profile_url">profileview.php</string>
+    <string name="updateprofile_url">updateCustomer.php</string>
+    <string name="push_url">androidRegistration.php</string>
+    <string name="userInfo_url">updateCustomerDetails.php</string>
+    <string name="add">ADD    </string>
+
+    <string name="facebook_app_id">113468599289511</string>
+    <string name="fb_login_protocol_scheme">fb113468599289511</string>
+
+
+</resources>

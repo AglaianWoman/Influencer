@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:paddingLeft="5dp"
+    android:background="@color/white"
+    android:paddingRight="5dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/com_facebook_blue"
+        android:layout_margin="@dimen/card_margin1"
+        app:cardCornerRadius="10dp"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:id="@+id/topone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/pgname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15sp"
+                android:typeface="sans"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:text="Page Name"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5sp"
+                android:layout_below="@+id/pgname"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/pgid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="normal"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="left"
+                android:layout_below="@+id/line"
+                android:layout_marginLeft="10sp"
+                android:text="Id :" />
+
+            <TextView
+                android:id="@+id/pgabout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="left"
+                android:layout_marginTop="5sp"
+                android:layout_below="@+id/pgid"
+                android:layout_marginLeft="10sp"
+                android:text="About :" />
+
+            <TextView
+                android:id="@+id/pgfancount"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="left"
+                android:layout_marginTop="5sp"
+                android:layout_below="@+id/pgabout"
+                android:layout_marginLeft="10sp"
+                android:text="Likes :" />
+
+            <TextView
+                android:id="@+id/pgtoken"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="left"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="10sp"
+                android:layout_below="@+id/pgfancount"
+                android:layout_marginLeft="10sp"
+                android:text="Access Token :" />
+
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

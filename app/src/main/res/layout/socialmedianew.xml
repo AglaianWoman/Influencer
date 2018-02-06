@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.design.widget.CoordinatorLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/coordinatorLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomlayout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Facebook Account :"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:textStyle="normal"
+                android:layout_marginLeft="15sp"
+                android:fontFamily="sans-serif-condensed"
+                android:id="@+id/facebooktext"
+                android:layout_marginTop="15dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/facebooklink"
+            android:hint="Enter your Facebook username"
+            android:inputType="text"
+            android:ems="16"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColorHint="@color/transperent"
+            android:textColor="@color/orangenew"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/facebooktext"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_corner"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="(Eg: www.facebook.com/username)"
+            android:textColor="@color/darkashe"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:layout_below="@+id/facebooklink"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/facebookinfotext"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Instagram Handle : "
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:gravity="left"
+            android:textStyle="normal"
+            android:layout_marginLeft="15sp"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/instagramtext"
+            android:layout_below="@+id/facebookinfotext"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/instagramlink"
+            android:hint="Enter your Instagram Handle"
+            android:inputType="text"
+            android:ems="16"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColorHint="@color/transperent"
+            android:textColor="@color/orangenew"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/instagramtext"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_corner"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="(Eg: username)"
+            android:textColor="@color/darkashe"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:layout_below="@+id/instagramlink"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/instagraminfotext"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Twitter Handle : "
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:gravity="left"
+            android:textStyle="normal"
+            android:layout_marginLeft="15sp"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/twittertext"
+            android:layout_below="@+id/instagraminfotext"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/twitterlink"
+            android:hint="Enter your Twitter Handle"
+            android:inputType="text"
+            android:ems="16"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColorHint="@color/transperent"
+            android:textColor="@color/orangenew"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/twittertext"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_corner"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="(Eg: username)"
+            android:textColor="@color/darkashe"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:layout_below="@+id/twitterlink"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/twitterinfotext"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Blog Handle : "
+        android:textColor="@color/orange"
+        android:textSize="18sp"
+        android:gravity="left"
+        android:textStyle="normal"
+        android:layout_marginLeft="15sp"
+        android:fontFamily="sans-serif-condensed"
+        android:id="@+id/blogtext"
+        android:layout_below="@+id/twitterinfotext"
+        android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bloglink"
+            android:hint="Enter your Blogger Link"
+            android:inputType="textEmailAddress"
+            android:ems="16"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColorHint="@color/transperent"
+            android:textColor="@color/orangenew"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/blogtext"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_corner"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="(Eg: www.blogger.com/username)"
+            android:textColor="@color/darkashe"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:layout_below="@+id/bloglink"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/bloginfotext"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Youtube Channel : "
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:gravity="left"
+            android:textStyle="normal"
+            android:layout_marginLeft="15sp"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/youtubetext"
+            android:layout_below="@+id/bloginfotext"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/youtubelink"
+            android:hint="Enter your Youtube Channel :"
+            android:inputType="text"
+            android:ems="16"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColorHint="@color/transperent"
+            android:textColor="@color/orangenew"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/youtubetext"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_corner"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="(Eg: www.youtube.com/user/channelname)"
+            android:textColor="@color/darkashe"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:layout_below="@+id/youtubelink"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/youtubeinfotext"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10sp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/save_button"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10sp"
+            android:layout_below="@+id/youtubeinfotext"
+            android:text="SAVE"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:background="@drawable/rounded_corner_button"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_alignLeft="@+id/facebookinfotext"
+            android:layout_alignStart="@+id/facebookinfotext"
+            android:layout_alignRight="@+id/facebookinfotext"
+            android:layout_alignEnd="@+id/facebookinfotext" />
+
+    </RelativeLayout>
+
+        </ScrollView>
+
+<!--</android.support.design.widget.CoordinatorLayout>-->

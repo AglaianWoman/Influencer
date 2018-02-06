@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ashe"
+    android:id="@+id/scrollView"
+    app:layout_collapseParallaxMultiplier="1.0">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        android:layout_margin="@dimen/card_margin1">
+
+        <LinearLayout
+            style="@style/Widget.CardContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="100sp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dip">
+
+                <ImageView
+                    android:id="@+id/tran_img"
+                    android:layout_width="75sp"
+                    android:layout_height="75sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@mipmap/paytm_icon" />
+
+                <TextView
+                    android:id="@+id/txid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5sp"
+                    android:layout_toEndOf="@+id/tran_img"
+                    android:layout_toRightOf="@+id/tran_img"
+                    android:ems="14"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Transaction Id"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:layout_below="@+id/txid"
+                    android:layout_alignLeft="@+id/txid"
+                    android:layout_alignStart="@+id/txid"
+                    android:ems="9"
+                    android:text="Transaction Type"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/txdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/txtype"
+                    android:layout_below="@+id/txtype"
+                    android:layout_alignStart="@+id/txtype"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:ems="9"
+                    android:layout_marginTop="2sp"
+                    android:text="Transaction Date" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/txdate"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/txdate"
+                    android:textColor="@color/orangenew"
+                    android:layout_below="@+id/txdate"
+                    android:textSize="15sp"
+                    android:ems="9"
+                    android:layout_marginTop="2sp"
+                    android:text="Transaction Status"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txamount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/txid"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginRight="5sp"
+                    android:layout_toEndOf="@+id/txtype"
+                    android:layout_toRightOf="@+id/txtype"
+                    android:gravity="right"
+                    android:text="Amount"
+                    android:textColor="@color/orange"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/campname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+    </android.support.v7.widget.CardView>
+</ScrollView>

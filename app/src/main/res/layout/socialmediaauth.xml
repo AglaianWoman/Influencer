@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.design.widget.CoordinatorLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/coordinatorLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomlayout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:id="@+id/welcometext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:text="Connect Social Media" />
+
+        <Button
+            android:id="@+id/connectfacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect Facebook"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            android:layout_below="@+id/welcometext"
+            android:background="@color/com_facebook_blue"
+            android:layout_marginTop="20sp"/>
+
+        <Button
+            android:id="@+id/connecttwitter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect Twitter"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            android:layout_below="@+id/connectfacebook"
+            android:background="@color/blue"
+            android:layout_marginTop="15sp"/>
+
+        <Button
+            android:id="@+id/connectinstagram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect Instagram"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            android:background="@color/darkpink"
+            android:layout_below="@+id/connecttwitter"
+            android:layout_marginTop="15sp"/>
+
+
+        <Button
+            android:id="@+id/connectyoutube"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect Youtube"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            android:layout_below="@+id/connectinstagram"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@color/red"
+            android:layout_marginTop="15sp"/>
+
+    </RelativeLayout>
+
+
+
+
+</ScrollView>
+
+<!--</android.support.design.widget.CoordinatorLayout>-->

@@ -1,0 +1,266 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lite_ashe">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            tools:context=".RegistrationScreen1"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout"
+
+            android:scaleType="fitXY">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:id="@+id/profileimage"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:padding="3dp"
+                android:background="@mipmap/user_icon_new"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="click above image to change your profile picture"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/transperent"
+                android:gravity="center"
+                android:id="@+id/userimg_text"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
+                android:layout_below="@+id/profileimage"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Name"
+                android:ems="14"
+                android:gravity="left"
+                android:singleLine="true"
+                android:paddingLeft="15dp"
+                android:textColor="@color/darkblue"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/userimg_text"
+                android:id="@+id/nme_profile"
+                android:background="@drawable/rounded_corner_new"
+                android:layout_centerHorizontal="true"/>
+
+            <EditText
+                android:id="@+id/about_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="70sp"
+                android:layout_below="@+id/nme_profile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner_new"
+                android:ems="14"
+                android:gravity="left"
+                android:hint="About Yourself"
+                android:inputType="textShortMessage"
+                android:paddingLeft="15dp"
+                android:textColor="@color/darkblue" />
+
+            <TextView
+                android:id="@+id/gender_profile0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/mobile_profile"
+                android:layout_alignStart="@+id/mobile_profile"
+                android:layout_below="@+id/about_profile"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_new"
+                android:ems="14"
+                android:gravity="left"
+                android:inputType="date"
+                android:singleLine="true"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/gender_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/mobile_profile"
+                android:layout_alignStart="@+id/mobile_profile"
+                android:layout_below="@+id/about_profile"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_new"
+                android:ems="14"
+                android:gravity="left"
+                android:inputType="date"
+                android:singleLine="true"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/gender_spinner"
+                android:layout_width="266dp"
+                android:layout_height="50sp"
+                android:layout_alignEnd="@+id/userimg_text"
+                android:layout_alignTop="@+id/gender_profile0"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/dob_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/mobile_profile"
+                android:layout_alignStart="@+id/mobile_profile"
+                android:layout_below="@+id/gender_profile"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_new"
+                android:ems="11"
+                android:gravity="left"
+                android:hint="DOB (DD-MM-YYYY)"
+                android:inputType="date"
+                android:singleLine="true"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/calender_icon"
+                android:layout_width="55sp"
+                android:layout_height="60sp"
+                android:onClick="setDate"
+                android:layout_alignEnd="@+id/mobile_profile"
+                android:layout_alignRight="@+id/mobile_profile"
+                android:layout_alignTop="@+id/dob_profile"
+                app:srcCompat="@mipmap/calendar_icon"
+                android:layout_toRightOf="@+id/dob_profile"
+                android:layout_toEndOf="@+id/dob_profile" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Mobile No"
+                android:ems="14"
+                android:gravity="left"
+                android:singleLine="true"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/darkblue"
+                android:id="@+id/mobile_profile"
+                android:layout_below="@+id/dob_profile"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_corner_new"/>
+
+            <EditText
+                android:id="@+id/address_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="80sp"
+                android:layout_alignLeft="@+id/mobile_profile"
+                android:layout_alignStart="@+id/mobile_profile"
+                android:layout_below="@+id/mobile_profile"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/rounded_corner_new"
+                android:ems="14"
+                android:gravity="left"
+                android:hint="Address"
+                android:inputType="textPostalAddress"
+                android:paddingLeft="15dp"
+                android:textColor="@color/darkblue" />
+
+            <TextView
+                android:id="@+id/city_profile0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/address_profile"
+                android:layout_alignStart="@+id/address_profile"
+                android:layout_below="@+id/address_profile"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_new"
+                android:ems="14"
+                android:gravity="left"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/city_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/address_profile"
+                android:layout_alignStart="@+id/address_profile"
+                android:layout_below="@+id/address_profile"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_new"
+                android:ems="14"
+                android:gravity="left"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp" />
+
+
+
+            <Spinner
+                android:id="@+id/city_spinner"
+                android:layout_width="266dp"
+                android:layout_height="50sp"
+                android:layout_alignEnd="@+id/userimg_text"
+                android:layout_alignTop="@+id/city_profile"
+                android:visibility="visible"
+                android:layout_alignRight="@+id/userimg_text" />
+
+            <EditText
+                android:id="@+id/city_profile1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/city_profile"
+                android:layout_alignStart="@+id/city_profile"
+                android:layout_below="@+id/city_profile"
+                android:layout_marginTop="5dp"
+                android:hint="Enter your city"
+                android:background="@drawable/rounded_corner_new"
+                android:ems="14"
+                android:visibility="invisible"
+                android:gravity="left"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="200sp"
+                android:layout_height="50sp"
+                android:id="@+id/save_button"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/city_profile1"
+                android:gravity="center"
+                android:text="SAVE"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:background="@drawable/rounded_corner_button"
+                android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/text_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+        </RelativeLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
