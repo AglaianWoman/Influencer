@@ -68,49 +68,23 @@ public class AllCampaignFragmentLive extends Fragment implements SwipeRefreshLay
                 @Override
                 public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
 
-                    String campImg = campValuesList.get(position).getCampImg();
-                    String campName = campValuesList.get(position).getCampName();
-                    String campShortNote = campValuesList.get(position).getCampShortNote();
-                    String campCat = campValuesList.get(position).getCampCat();
-                    String campLongNote = campValuesList.get(position).getCampLongNote();
-                    String campGoal = campValuesList.get(position).getCampGoal();
-                    String campDos = campValuesList.get(position).getCampDos();
-                    String campDont = campValuesList.get(position).getCampDont();
-                    String campBacklink = campValuesList.get(position).getCampBacklink();
-                    String campTag= campValuesList.get(position).getCampTag();
                     String campid = campValuesList.get(position).getCampid();
-                    String campApplyTill = campValuesList.get(position).getCampApplyTill();
-                    String campRewards = campValuesList.get(position).getCampRewards();
-                    String campRewardType = campValuesList.get(position).getCampRewardType();
-                    String fixedamount= campValuesList.get(position).getFixedamount();
+                    String campName = campValuesList.get(position).getCampName();
+                    String campImg = campValuesList.get(position).getCampImg();
+                    String campCat = campValuesList.get(position).getCampCat();
+                    String campShortNote = campValuesList.get(position).getCampShortNote();
 
-                    // TODO Auto-generated method stub
                     Intent intent = new Intent(getActivity(), AllCampDetailsLive.class);
                     Bundle bund = new Bundle();
-                    //Inserts a String value into the mapping of this Bundle
-                    bund.putString("campImg", campImg);
-                    bund.putString("campName", campName);
-                    bund.putString("campShortNote", campShortNote);
-                    bund.putString("campCat", campCat);
-                    bund.putString("campLongNote", campLongNote);
-                    bund.putString("campGoal", campGoal);
-                    bund.putString("campDos", campDos);
-                    bund.putString("campDont", campDont);
-                    bund.putString("campBacklink", campBacklink);
-                    bund.putString("campTag", campTag);
                     bund.putString("campid", campid);
-                    bund.putString("campApplyTill", campApplyTill);
-                    bund.putString("campRewards", campRewards);
-                    bund.putString("campRewardType", campRewardType);
-                    bund.putString("fixedamount", fixedamount);
-                    //Add the bundle to the intent.
+                    bund.putString("campName", campName);
+                    bund.putString("campImg", campImg);
+                    bund.putString("campCat", campCat);
+                    bund.putString("campShortNote", campShortNote);
                     intent.putExtras(bund);
-                    //start the DisplayActivity
                     startActivity(intent);
-                    // Toast.makeText(getActivity(),campImg+"_____________"+campBacklink, Toast.LENGTH_LONG).show();
                 }
             });
-
             CampaignsFunction();
 
         }else {
@@ -153,21 +127,12 @@ public class AllCampaignFragmentLive extends Fragment implements SwipeRefreshLay
                         JSONObject obj = response.getJSONObject(i);
 
                         CampValues campvalue = new CampValues();
-                        campvalue.setCampImg(obj.getString("campImg"));
-                        campvalue.setCampName(obj.getString("campName"));
-                        campvalue.setCampShortNote(obj.getString("campShortNote"));
-                        campvalue.setCampCat(obj.getString("campCat"));
-                        campvalue.setCampLongNote(obj.getString("campLongNote"));
-                        campvalue.setCampGoal(obj.getString("campGoal"));
-                        campvalue.setCampDos(obj.getString("campDos"));
-                        campvalue.setCampDont(obj.getString("campDont"));
-                        campvalue.setCampBacklink(obj.getString("campBacklink"));
-                        campvalue.setCampTag(obj.getString("campTag"));
                         campvalue.setCampid(obj.getString("campid"));
-                        campvalue.setCampApplyTill(obj.getString("campApplyTill"));
-                        campvalue.setCampRewards(obj.getString("campRewards"));
-                        campvalue.setCampRewardType(obj.getString("campRewardType"));
-                        campvalue.setFixedamount(obj.getString("fixedamount"));
+                        campvalue.setCampName(obj.getString("campName"));
+                        campvalue.setCampImg(obj.getString("campImg"));
+                        campvalue.setCampCat(obj.getString("campCat"));
+                        campvalue.setCampShortNote(obj.getString("campShortNote"));
+                        campvalue.setCampShortNote(obj.getString("campShortNote"));
                         // adding contentofCampaigns to movies array
                         campValuesList.add(campvalue);
 

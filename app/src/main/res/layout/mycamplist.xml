@@ -31,7 +31,7 @@
                 android:typeface="sans"
                 android:fontFamily="sans-serif-condensed"
                 android:textStyle="bold"
-                android:textColor="@color/list_background_pressed"
+                android:textColor="@color/orange"
                 android:textSize="20sp"
                 android:gravity="center"
                 android:textAllCaps="true"
@@ -96,13 +96,13 @@
                         android:id="@+id/campappliedstatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Completed"
-                        android:textStyle="bold"
                         android:layout_marginTop="5sp"
-                        android:textColor="@color/list_background_pressed"
-                        android:textSize="16sp"
+                        android:layout_weight="1"
                         android:fontFamily="sans-serif"
-                        android:layout_weight="1" />
+                        android:text="Not-applicable"
+                        android:textColor="@color/orange"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -156,13 +156,13 @@
                         android:id="@+id/camppaymentstatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Completed"
-                        android:textStyle="bold"
                         android:layout_marginTop="5sp"
-                        android:textColor="@color/list_background_pressed"
-                        android:textSize="16sp"
+                        android:layout_weight="1"
                         android:fontFamily="sans-serif"
-                        android:layout_weight="1" />
+                        android:text="Not-applicable"
+                        android:textColor="@color/orange"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <View
@@ -215,13 +215,13 @@
                         android:id="@+id/campdeliverystatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Completed"
-                        android:textStyle="bold"
                         android:layout_marginTop="5sp"
-                        android:textColor="@color/list_background_pressed"
-                        android:textSize="16sp"
+                        android:layout_weight="1"
                         android:fontFamily="sans-serif"
-                        android:layout_weight="1" />
+                        android:text="Not-applicable"
+                        android:textColor="@color/orange"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -272,13 +272,13 @@
                     android:id="@+id/campaignquote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="000000"
-                    android:textStyle="bold"
                     android:layout_marginTop="5sp"
-                    android:textColor="@color/list_background_pressed"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
                     android:fontFamily="sans-serif"
-                    android:layout_weight="1" />
+                    android:text="000000"
+                    android:textColor="@color/orange"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -320,16 +320,17 @@
                     android:id="@+id/campapplieddate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DD-MM-YYYY"
-                    android:textStyle="bold"
                     android:layout_marginTop="5sp"
-                    android:textColor="@color/list_background_pressed"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
                     android:fontFamily="sans-serif"
-                    android:layout_weight="1" />
+                    android:text="DD-MM-YYYY"
+                    android:textColor="@color/orange"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
             </LinearLayout>
         </RelativeLayout>
+
         <TextView
             android:id="@+id/cid"
             android:layout_width="wrap_content"
@@ -342,14 +343,12 @@
             android:layout_height="wrap_content"
             android:visibility="invisible"
             android:layout_centerHorizontal="true" />
-
         <TextView
             android:id="@+id/bloglink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
             android:layout_centerHorizontal="true" />
-
         <TextView
             android:id="@+id/tweetlink"
             android:layout_width="wrap_content"

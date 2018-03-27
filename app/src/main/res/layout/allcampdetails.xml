@@ -69,12 +69,12 @@
                                 android:id="@+id/campName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/orange"
+                                android:textColor="@color/orangenew"
                                 android:layout_marginTop="5dp"
                                 android:gravity="center"
                                 android:text="Campaign Name"
-                                android:textStyle="bold"
                                 android:layout_gravity="center"
+
                                 android:fontFamily="sans-serif-condensed"
                                 android:textSize="28sp" />
 
@@ -82,10 +82,9 @@
                                 android:id="@+id/campCat"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/orangenew"
+                                android:textColor="@color/orange"
                                 android:gravity="center"
                                 android:text="Categories"
-                                android:textStyle="bold"
                                 android:layout_marginBottom="10dp"
                                 android:layout_gravity="center"
                                 android:fontFamily="sans-serif-condensed"
@@ -110,7 +109,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Short Brief : "
-                                android:textStyle="bold"
                                 android:layout_below="@+id/campname"
                                 android:fontFamily="sans-serif-condensed"
                                 android:paddingTop="5dp"
@@ -145,7 +143,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Long Brief : "
-                                android:textStyle="bold"
                                 android:textSize="20sp"
                                 android:layout_below="@+id/campname"
                                 android:fontFamily="sans-serif-condensed"
@@ -174,6 +171,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/cardview"
                         android:layout_margin="@dimen/card_margin1">
+
                         <LinearLayout
                             style="@style/Widget.CardContent"
                             android:layout_width="match_parent"
@@ -184,7 +182,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Goal : "
-                                android:textStyle="bold"
                                 android:textSize="20sp"
                                 android:fontFamily="sans-serif-condensed"
                                 android:paddingTop="5dp"
@@ -213,7 +210,6 @@
                                 android:text="Do's : "
                                 android:textSize="20sp"
                                 android:paddingTop="5dp"
-                                android:textStyle="bold"
                                 android:fontFamily="sans-serif-condensed"
                                 android:textColor="@color/orange"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Title" />
@@ -236,7 +232,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Don'ts : "
-                                android:textStyle="bold"
                                 android:textSize="20sp"
                                 android:paddingTop="5dp"
                                 android:fontFamily="sans-serif-condensed"
@@ -261,7 +256,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Apply Till : "
-                                android:textStyle="bold"
                                 android:textSize="20sp"
                                 android:paddingTop="5dp"
                                 android:fontFamily="sans-serif-condensed"
@@ -288,7 +282,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="Rewards : "
                                 android:paddingTop="5dp"
-                                android:textStyle="bold"
                                 android:textSize="20sp"
                                 android:fontFamily="sans-serif-condensed"
                                 android:textColor="@color/orange"
@@ -313,7 +306,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Campaign Type : "
-                                android:textStyle="bold"
                                 android:paddingTop="5dp"
                                 android:textSize="20sp"
                                 android:fontFamily="sans-serif-condensed"
@@ -336,6 +328,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/cardview1"
                         android:layout_margin="@dimen/card_margin1">
+
                         <LinearLayout
                             style="@style/Widget.CardContent"
                             android:layout_width="match_parent"
@@ -347,7 +340,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="Tag : "
                                 android:textSize="20sp"
-                                android:textStyle="bold"
                                 android:layout_below="@+id/campname"
                                 android:fontFamily="sans-serif-condensed"
                                 android:paddingTop="5dp"
@@ -379,7 +371,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="Campaign Link : "
                                 android:textSize="20sp"
-                                android:textStyle="bold"
                                 android:layout_below="@+id/campname"
                                 android:fontFamily="sans-serif-condensed"
                                 android:paddingTop="5dp"
@@ -449,6 +440,38 @@
                         android:layout_below="@+id/cardview2"
                         android:layout_centerHorizontal="true" />
 
+                    <Button
+                        android:layout_width="250sp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/approved"
+                        android:background="@drawable/rounded_corner_button"
+                        android:visibility="invisible"
+                        android:text="APPROVED"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="sans-serif"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_below="@+id/cardview2"
+                        android:layout_centerHorizontal="true" />
+
+                    <Button
+                        android:layout_width="250sp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/notapproved"
+                        android:background="@drawable/rounded_corner_button_orange"
+                        android:visibility="invisible"
+                        android:text="NOT APPROVED"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="sans-serif"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_below="@+id/cardview2"
+                        android:layout_centerHorizontal="true" />
+
                     <TextView
                         android:id="@+id/fixedamount"
                         android:layout_width="match_parent"
@@ -462,6 +485,5 @@
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
-
 
 </android.support.design.widget.CoordinatorLayout>

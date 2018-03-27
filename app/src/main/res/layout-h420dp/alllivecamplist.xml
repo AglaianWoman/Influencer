@@ -3,22 +3,21 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="5dp"
     android:paddingLeft="2dp"
     android:paddingRight="2dp"
     android:background="@color/ashe">
-
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/ashe1"
-        android:layout_margin="@dimen/card_margin2"
+        android:layout_margin="@dimen/card_margin1"
         android:layout_centerHorizontal="true">
 
-        <LinearLayout
+        <RelativeLayout
             style="@style/Widget.CardContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -27,97 +26,69 @@
                 android:id="@+id/campImg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:background="@mipmap/influencerlistimg" />
+                android:background="@mipmap/influencerlistimg"
+                android:scaleType="fitCenter" />
 
             <TextView
                 android:id="@+id/campName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/orange"
-                android:text="Campaign Name"
+                android:layout_below="@+id/campImg"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="5sp"
                 android:layout_marginTop="5dp"
-                android:layout_gravity="left"
-                android:gravity="left"
-                android:layout_marginLeft="5sp"
-                android:layout_marginRight="5sp"
                 android:fontFamily="sans-serif"
-                android:textSize="22sp" />
+                android:gravity="left"
+                android:text="Campaign Name"
+                android:textColor="@color/violet"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/campCat"
+            <LinearLayout
+                android:id="@+id/linearone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
-                android:text="Fashion , Lifestyle"
-                android:textColor="@color/actionbarcolour"
-                android:layout_gravity="left"
-                android:gravity="left"
-                android:layout_marginLeft="5sp"
-                android:layout_marginRight="5sp"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="15sp" />
+                android:layout_below="@+id/campName"
+                android:layout_marginTop="5sp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/campShortNote"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="visible"
-                android:text="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC."
-                android:textColor="@color/counter_text_color"
-                android:layout_gravity="left"
-                android:gravity="left"
-                android:layout_marginLeft="5sp"
-                android:layout_marginRight="5sp"
-                android:layout_marginBottom="5sp"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/campCat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/campName"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginRight="5sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="left"
+                    android:text="Fashion , Lifestyle"
+                    android:textColor="@color/orange"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
 
-        </LinearLayout>
+
+                <TextView
+                    android:id="@+id/campShortNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/campCat"
+                    android:layout_gravity="left"
+                    android:layout_marginBottom="5sp"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginRight="5sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="left"
+                    android:text="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC."
+                    android:textColor="@color/dark_ashe"
+                    android:textSize="13sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
-
-    <TextView
-        android:id="@+id/campLongNote"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
-    <TextView
-        android:id="@+id/campGoal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/campDos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/campDont"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/campBacklink"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/campTag"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
 
     <TextView
         android:id="@+id/campid"
@@ -125,34 +96,6 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/campApplyTill"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/campRewards"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/campRewardType"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
-
-    <TextView
-        android:id="@+id/fixedamount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="10sp" />
-
-
 </RelativeLayout>
+
+    <!--android:layout_toRightOf="@+id/linearone"-->

@@ -35,61 +35,33 @@ public class CampAdapter extends ArrayAdapter<CampValues> {
 		if (v == null) {
 			holder = new ViewHolder();
 			v = vi.inflate(Resource, null);
-
-			holder.campImg = (ImageView) v.findViewById(R.id.campImg);
-			holder.campName = (TextView) v.findViewById(R.id.campName);
-			holder.campShortNote = (TextView) v.findViewById(R.id.campShortNote);
-			holder.campCat = (TextView) v.findViewById(R.id.campCat);
-			holder.campLongNote = (TextView) v.findViewById(R.id.campLongNote);
-			holder.campGoal = (TextView) v.findViewById(R.id.campGoal);
-			holder.campDos = (TextView) v.findViewById(R.id.campDos);
-			holder.campDont = (TextView) v.findViewById(R.id.campDont);
-			holder.campBacklink = (TextView) v.findViewById(R.id.campBacklink);
-			holder.campTag = (TextView) v.findViewById(R.id.campTag);
 			holder.campid = (TextView) v.findViewById(R.id.campid);
-			holder.campApplyTill = (TextView) v.findViewById(R.id.campApplyTill);
-			holder.campRewards = (TextView) v.findViewById(R.id.campRewards);
-			holder.campRewardType = (TextView) v.findViewById(R.id.campRewardType);
-			holder.fixedamount = (TextView) v.findViewById(R.id.fixedamount);
+			holder.campName = (TextView) v.findViewById(R.id.campName);
+			holder.campImg = (ImageView) v.findViewById(R.id.campImg);
+			holder.campCat = (TextView) v.findViewById(R.id.campCat);
+			holder.campShortNote = (TextView) v.findViewById(R.id.campShortNote);
+
 			v.setTag(holder);
 		} else {
 			holder = (ViewHolder) v.getTag();
 		}
+		holder.campid.setText(campList.get(position).getCampid());
+		holder.campName.setText(campList.get(position).getCampName());
 		holder.campImg.setImageResource(R.mipmap.influencerlistimg);
 		new DownloadImageTask(holder.campImg).execute(campList.get(position).getCampImg());
-		holder.campName.setText(campList.get(position).getCampName());
-		holder.campShortNote.setText(campList.get(position).getCampShortNote());
 		holder.campCat.setText(campList.get(position).getCampCat());
-		holder.campLongNote.setText(campList.get(position).getCampLongNote());
-		holder.campGoal.setText(campList.get(position).getCampGoal());
-		holder.campDos.setText(campList.get(position).getCampDos());
-		holder.campDont.setText(campList.get(position).getCampDont());
-		holder.campBacklink.setText(campList.get(position).getCampBacklink());
-		holder.campTag.setText(campList.get(position).getCampTag());
-		holder.campid.setText(campList.get(position).getCampid());
-		holder.campApplyTill.setText(campList.get(position).getCampApplyTill());
-		holder.campRewards.setText(campList.get(position).getCampRewards());
-		holder.campRewardType.setText(campList.get(position).getCampRewardType());
-		holder.fixedamount.setText(campList.get(position).getFixedamount());
+		holder.campShortNote.setText(campList.get(position).getCampShortNote());
 		return v;
 	}
 
 	static class ViewHolder {
-		public ImageView campImg;
+
+		public TextView campid;
 		public TextView campName;
+		public ImageView campImg;
 		public TextView campShortNote;
 		public TextView campCat;
-		public TextView campLongNote;
-		public TextView campGoal;
-		public TextView campDos;
-		public TextView campDont;
-		public TextView campBacklink;
-		public TextView campTag;
-		public TextView campid;
-		public TextView campApplyTill;
-		public TextView campRewards;
-		public TextView campRewardType;
-		public TextView fixedamount;
+
 
 	}
 

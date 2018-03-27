@@ -16,6 +16,7 @@ import android.content.pm.ShortcutManager;
 import android.graphics.Color;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -53,29 +54,33 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
+import java.util.concurrent.ExecutionException;
+
 
 public class NewHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    String cid,cname,email,cmobileno,ccity,cuserimage;
+    String cid, cname, email, cmobileno, ccity, cuserimage;
     ImageView user_icon;
-    TextView user_name, user_email,user_mobile;
-    String devicenamenew,deviceserialnew,devicemodelnew,deviceGCMServerkeynew,appversionnew;
-    String username1, emailid1, mobileno, city, blog, blogtraffic, twitterhandle, message, profileprogress, mozrank,twitter_followers, instagram, instagram_followers, overallreach, foi, userimage, overallscore, response;
+    TextView user_name, user_email, user_mobile;
+    String devicenamenew, deviceserialnew, devicemodelnew, deviceGCMServerkeynew, appversionnew;
+    String username1, emailid1, mobileno, city, blog, blogtraffic, twitterhandle, message, profileprogress, mozrank, twitter_followers, instagram, instagram_followers, overallreach, foi, userimage, overallscore, response;
     Boolean isInternetPresent = false;
-    SharedPreferences.Editor editor,editor1,editor2,editor3,editor4;
+    SharedPreferences.Editor editor, editor1, editor2, editor3, editor4;
+    String mLatestVersionName;
     ConnectionDetector cd;
     ProgressDialog pdialog;
     public static final String LOGIN_NAME = "LoginFile";
     private static final String PREFS_NAME = "NewHomeActivity";
-    Context context=NewHomeActivity.this;
+    Context context = NewHomeActivity.this;
 
     public static final String KEY_DEVICENAME = "device_name";
     public static final String KEY_DEVICEMODEL = "device_model";
@@ -90,7 +95,7 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
+        // Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_home_new);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -131,7 +136,6 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-//navigation
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -146,7 +150,7 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
         ccity = prfs.getString("city1", "");
         cuserimage = prfs.getString("userimage1", "");
 
-        Log.v("Result : ",cid+" "+cname+" "+email+" "+cmobileno+" "+cuserimage);
+        Log.v("Result : ", cid + " " + cname + " " + email + " " + cmobileno + " " + cuserimage);
 
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
@@ -154,7 +158,7 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
         //profileFunction();
         if (firstStart) {
             //display your Message here
-            Log.v("DeviceStatus : ","First Time");
+            Log.v("DeviceStatus : ", "First Time");
             DeviceDetails();
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("firstStart", false);
@@ -164,7 +168,7 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
         if (cid.length() != 0) {
             if (isInternetPresent) {
                 profileFunction();
-               // Toast.makeText(getApplicationContext(), "Internet Connection is Working!", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getApplicationContext(), "Internet Connection is Working!", Toast.LENGTH_SHORT).show();
             } else {
                 //Toast.makeText(getApplicationContext(), "No internet connection!", Toast.LENGTH_SHORT).show();
                 Snackbar snackbar = Snackbar
@@ -212,8 +216,9 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
         devicenamenew = Build.BRAND;
         devicemodelnew = Build.MODEL;
         deviceserialnew = Build.SERIAL;
-        Log.v("DeviceDetails : ","Working");
-        if(deviceserialnew==null || deviceserialnew.length()==0) deviceserialnew = ""+System.currentTimeMillis();
+        Log.v("DeviceDetails : ", "Working");
+        if (deviceserialnew == null || deviceserialnew.length() == 0)
+            deviceserialnew = "" + System.currentTimeMillis();
         PackageInfo pInfonew = null;
         try {
             pInfonew = getPackageManager().getPackageInfo(getPackageName(), 0);
@@ -222,17 +227,17 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
         }
         assert pInfonew != null;
         appversionnew = pInfonew.versionName;
-        deviceGCMServerkeynew =  PreferenceManager.getPushCatID(NewHomeActivity.this);
+        deviceGCMServerkeynew = PreferenceManager.getPushCatID(NewHomeActivity.this);
 
-        System.out.println("Customer ID :  "+cid);
-        System.out.println("Device Name :  "+devicenamenew);
-        System.out.println("Device Model :  "+devicemodelnew);
-        System.out.println("Device Serial :  "+deviceserialnew);
-        System.out.println("App Version : "+appversionnew);
-        System.out.println("Device Service Key :  "+deviceGCMServerkeynew);
+        System.out.println("Customer ID :  " + cid);
+        System.out.println("Device Name :  " + devicenamenew);
+        System.out.println("Device Model :  " + devicemodelnew);
+        System.out.println("Device Serial :  " + deviceserialnew);
+        System.out.println("App Version : " + appversionnew);
+        System.out.println("Device Service Key :  " + deviceGCMServerkeynew);
 
-        String DEVICE_URL = getResources().getString(R.string.base_url)+getResources().getString(R.string.device_details_url);
-        Log.v("URL",DEVICE_URL);
+        String DEVICE_URL = getResources().getString(R.string.base_url) + getResources().getString(R.string.device_details_url);
+        Log.v("URL", DEVICE_URL);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, DEVICE_URL, new Response.Listener<String>() {
             @Override
@@ -242,8 +247,8 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
                     org.json.JSONObject json = new org.json.JSONObject(success);
                     success = json.getString("success");
                     message = json.getString("message");
-                    System.out.println("success "+success);
-                    System.out.println("message "+message);
+                    System.out.println("success " + success);
+                    System.out.println("message " + message);
                 } catch (org.json.JSONException e) {
                     e.printStackTrace();
                 }
@@ -276,8 +281,8 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
         pdialog.setMessage("Loading...");
         pdialog.setCancelable(false);
         pdialog.show();
-        String PROFILE_URL = getResources().getString(R.string.base_url)+getResources().getString(R.string.profile_url);
-        Log.v("PROFILE_URL : ",PROFILE_URL);
+        String PROFILE_URL = getResources().getString(R.string.base_url) + getResources().getString(R.string.profile_url);
+        Log.v("PROFILE_URL : ", PROFILE_URL);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, PROFILE_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String success) {
@@ -314,7 +319,7 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-                 }
+                }
                 pdialog.dismiss();
             }
         },
@@ -365,19 +370,21 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
         }
         return super.onKeyDown(keyCode, event);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) { 
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-      //  noinspection SimplifiableIfStatement
+        //  noinspection SimplifiableIfStatement
         if (id == R.id.notification) {
             Intent intent = new Intent(NewHomeActivity.this, NotificationManager.class);
             startActivity(intent);
@@ -405,15 +412,54 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
 //        } else if (id == R.id.nav_manageinterests) {
 //            Intent intent = new Intent(NewHomeActivity.this, MyProfileDummy.class);
 //            startActivity(intent);
-        }  else if (id == R.id.nav_ourblog) {
+        } else if (id == R.id.nav_ourblog) {
             Intent intent = new Intent(NewHomeActivity.this, OurBlogPage.class);
             startActivity(intent);
-         } else if (id == R.id.nav_settings) {
+        } else if (id == R.id.nav_settings) {
             Intent intent = new Intent(NewHomeActivity.this, UserSettings.class);
             startActivity(intent);
         } else if (id == R.id.nav_contactus) {
             Intent intent = new Intent(NewHomeActivity.this, ContactUs.class);
             startActivity(intent);
+//        } else if (id == R.id.nav_update) {
+//
+////            try {
+////                web_update();
+////            } catch (PackageManager.NameNotFoundException e) {
+////                e.printStackTrace();
+////            }
+//            VersionChecker versionChecker = new VersionChecker();
+//            try {
+//                mLatestVersionName = versionChecker.execute().get();
+//            } catch (InterruptedException | ExecutionException e) {
+//                e.printStackTrace();
+//            }
+
+//            if (Double.parseDouble(BuildConfig.VERSION_NAME) < Double.parseDouble(mLatestVersionName)) {
+//                //perform your task here like show alert dialogue "Need to upgrade app"
+//                Log.d("value :","1");
+//            }else{
+//                Log.d("value :","2");
+//            }
+
+            String[] v1 = BuildConfig.VERSION_NAME.split("\\.");
+            String[] v2 = mLatestVersionName.split("\\.");
+
+            if (v1.length != v2.length){
+                Log.d("value :","1");}
+                else {
+                Log.d("value :","2");
+            }
+
+//            for (int pos = 0; pos < v1.length; pos++) {
+//                // compare v1[pos] with v2[pos] as necessary
+//                if (Integer.parseInt(v1[pos]) > Integer.parseInt(v2[pos])) {
+//                    System.err.println("v1 is greater");
+//                } else if (Integer.parseInt(v1[pos]) < Integer.parseInt(v2[pos])) {
+//                    System.err.println("v2 is greater");
+//                }
+//            }
+
         } else if (id == R.id.nav_logout) {
             SharedPreferences prefernce = getSharedPreferences("CID_VALUE", Context.MODE_PRIVATE);
             editor = prefernce.edit();
@@ -438,35 +484,101 @@ public class NewHomeActivity extends AppCompatActivity implements NavigationView
 
             Intent intent = new Intent(NewHomeActivity.this, FirstActivity.class);
             startActivity(intent);
-       }
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
 
-        ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
-        }
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
+//    private boolean web_update() {
+//        try {
+//
+//            String curVersion = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+//            String newVersion = null;
+//            newVersion = Jsoup.connect("https://play.google.com/store/apps/details?id=com.socialbeat.influencer&hl=en%22")
+//                    .timeout(30000)
+//                    .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+//                    .referrer("http://www.google.com")
+//                    .get()
+//                    .select("div[itemprop=softwareVersion]")
+//                    .first()
+//                    .ownText();
+//            return (value(curVersion) < value(newVersion)) ? true : false;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return false;
+//        }
+//    private  void web_update() throws PackageManager.NameNotFoundException {
+//        String appcurVersion = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+//        Log.d("value",appcurVersion);
+//        if( ! appcurVersion.equals(versionFromHTML))
+//        {
+//            Toast.makeText(this, "New version available on play store", Toast.LENGTH_SHORT);
+//        }
+//
+//    }
+        class ViewPagerAdapter extends FragmentPagerAdapter {
+            private final List<Fragment> mFragmentList = new ArrayList<>();
+            private final List<String> mFragmentTitleList = new ArrayList<>();
+
+            ViewPagerAdapter(FragmentManager manager) {
+                super(manager);
+            }
+
+            @Override
+            public Fragment getItem(int position) {
+                return mFragmentList.get(position);
+            }
+
+            @Override
+            public int getCount() {
+                return mFragmentList.size();
+            }
+
+            void addFragment(Fragment fragment, String title) {
+                mFragmentList.add(fragment);
+                mFragmentTitleList.add(title);
+            }
+
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return mFragmentTitleList.get(position);
+            }
         }
 
-        void addFragment(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
+    private long value(String string) {
+        string = string.trim();
+        Log.d("String Value : ",string);
+        if (string.contains(".")) {
+            final int index = string.lastIndexOf(".");
+            return value(string.substring(0, index)) * 100 + value(string.substring(index + 1));
+        } else {
+            return Long.valueOf(string);
         }
     }
+
+//    @SuppressLint("StaticFieldLeak")
+//    public class VersionChecker extends AsyncTask<String, String, String> {
+//
+//        private String newVersion;
+//
+//        @Override
+//        protected String doInBackground(String... params) {
+//
+//            try {
+//                newVersion = Jsoup.connect("https://play.google.com/store/apps/details?id=com.socialbeat.influencer&hl=en")
+//                        .timeout(30000)
+//                        .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+//                        .referrer("http://www.google.com")
+//                        .get()
+//                        .select("div[itemprop=softwareVersion]")
+//                        .first()
+//                        .ownText();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return newVersion;
+//        }
+//    }
 }

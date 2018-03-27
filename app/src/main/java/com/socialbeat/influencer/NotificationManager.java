@@ -37,7 +37,7 @@ public class NotificationManager extends AppCompatActivity {
     private ProgressDialog pDialog;
     ListView notifylistview;
     // String cid,campid,campname,campapplieddate,campappliedstatus,camppaymentstatus,campdeliverystatus,bloglink,tweetlink;
-    String cid,notificationid,notificationtype,message,datetime;
+    String cid,notificationid,notificationtype,message,datetime,campid;
     SharedPreferences.Editor editor;
     Boolean isInternetPresent = false;
     // Connection detector class
@@ -51,6 +51,7 @@ public class NotificationManager extends AppCompatActivity {
     private static final String TAG_NMESSAGE = "message";
     private static final String TAG_NTYPE = "notificationtype";
     private static final String TAG_NDATETIME = "datetime";
+    private static final String TAG_CAMPID = "campid";
 
     // notification JSONArray
     JSONArray notification = null;
@@ -94,16 +95,19 @@ public class NotificationManager extends AppCompatActivity {
                     String message = ((TextView) view.findViewById(R.id.message)).getText().toString();
                     String notificationtype = ((TextView) view.findViewById(R.id.notificationtype)).getText().toString();
                     String datetime = ((TextView) view.findViewById(R.id.datetime)).getText().toString();
-                   // String campid = ((TextView) view.findViewById(R.id.datetime)).getText().toString();
-
+                    String campid = ((TextView) view.findViewById(R.id.campid)).getText().toString();
 
                     if(!notificationtype.isEmpty()) {
 
                         //  Toast.makeText(Notificationwindow.this, notificationid+ "  "+message+ "  "+notificationtype+ "  "+datetime, Toast.LENGTH_LONG).show();
                         if (notificationtype.equalsIgnoreCase("campaigndetail")) {
                             Log.v("Notification Type : ", "campaigndetail");
-                            Intent in = new Intent(NotificationManager.this, NewHomeActivity.class);
-                            startActivity(in);
+                            Log.v("Campaign Id : ", campid);
+                            Intent intent = new Intent(NotificationManager.this, AllCampDetailsLive.class);
+                            Bundle bund = new Bundle();
+                            bund.putString("campid", campid);
+                            intent.putExtras(bund);
+                            startActivity(intent);
                         } else if (notificationtype.equalsIgnoreCase("profilesocial")) {
                             Log.v("Notification Type : ", "profilesocial");
                             Intent in = new Intent(NotificationManager.this, MyProfileDummy.class);
@@ -118,8 +122,12 @@ public class NotificationManager extends AppCompatActivity {
                             startActivity(in);
                         } else if (notificationtype.equalsIgnoreCase("approvedstatus")) {
                             Log.v("Notification Type : ", "approvedstatus");
-                            Intent in = new Intent(NotificationManager.this, MyCampaignsFragment.class);
-                            startActivity(in);
+                            Log.v("Campaign Id : ", campid);
+                            Intent intent = new Intent(NotificationManager.this, CampBrief.class);
+                            Bundle bund = new Bundle();
+                            bund.putString("campid", campid);
+                            intent.putExtras(bund);
+                            startActivity(intent);
                         } else if (notificationtype.equalsIgnoreCase("list")) {
                             Log.v("Notification Type : ", "list");
                             Intent in = new Intent(NotificationManager.this, NewHomeActivity.class);
@@ -227,6 +235,7 @@ public class NotificationManager extends AppCompatActivity {
                         message = c.getString(TAG_NMESSAGE);
                         notificationtype = c.getString(TAG_NTYPE);
                         datetime = c.getString(TAG_NDATETIME);
+                        campid = c.getString(TAG_CAMPID);
                         // tmp hashmap for single notice
                         HashMap<String, String> notice = new HashMap<String, String>();
                         // adding each child node to HashMap key => value
@@ -234,6 +243,7 @@ public class NotificationManager extends AppCompatActivity {
                         notice.put(TAG_NMESSAGE, message);
                         notice.put(TAG_NTYPE, notificationtype);
                         notice.put(TAG_NDATETIME, datetime);
+                        notice.put(TAG_CAMPID, campid);
                         // adding notice to notice list
                         notificationList.add(notice);
                     }
@@ -257,8 +267,8 @@ public class NotificationManager extends AppCompatActivity {
              * Updating parsed JSON data into ListView
              * */
             ListAdapter adapter = new SimpleAdapter(NotificationManager.this, notificationList,
-                    R.layout.notificationlist, new String[]{TAG_NID,TAG_NMESSAGE,TAG_NTYPE,TAG_NDATETIME},
-                    new int[]{R.id.notificationid,R.id.message,R.id.notificationtype,R.id.datetime});
+                    R.layout.notificationlist, new String[]{TAG_NID,TAG_NMESSAGE,TAG_NTYPE,TAG_NDATETIME,TAG_CAMPID},
+                    new int[]{R.id.notificationid,R.id.message,R.id.notificationtype,R.id.datetime,R.id.campid});
             notifylistview.setAdapter(adapter);
         }
 

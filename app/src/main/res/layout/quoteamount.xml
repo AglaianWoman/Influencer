@@ -55,7 +55,7 @@
                     android:layout_marginTop="15dp"
                     android:fontFamily="sans-serif-condensed"
                     android:gravity="center"
-                    android:text="Enter your quote (per blog/per tweet) for this campaign (in Rs.): "
+                    android:text="Enter your quote in Rs. for all the deliverables mentioned in the brief for this campaign"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/com_facebook_blue"
                     android:textSize="18dp" />

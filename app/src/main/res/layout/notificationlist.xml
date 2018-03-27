@@ -70,4 +70,12 @@
         android:singleLine="true"
         android:textSize="10sp" />
 
+    <TextView
+        android:id="@+id/campid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:singleLine="true"
+        android:textSize="10sp" />
+
 </RelativeLayout>

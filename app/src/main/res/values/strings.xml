@@ -40,7 +40,7 @@
 
     <string name="title_activity_sms">SmsActivity</string>
     <string name="action_logout">Logout</string>
-    <string name="msg_enter_mobile">Enter your information to get started!</string>
+    <string name="msg_enter_mobile"> r information to get started!</string>
     <string name="msg_enter_msg">Enter your mobile no to get started!</string>
     <string name="lbl_name">Name</string>
     <string name="lbl_email">Email</string>
@@ -62,12 +62,11 @@
     <string name="chennai_address">No:338 6th Floor,\n Fountain Plaza, Pantheon Rd,\n Egmore, Chennai,\n  Tamil Nadu 600008,India</string>
     <string name="bangalore_address">No:22, 15th Cross Rd,\n Sector 4, HSR layout,\n Bengaluru,\n Karnataka 560102, India</string>
     <string name="mumbai_address">B Wing, 5th floor,\n Ackruti Trade Centre, MIDC,\n Andheri (E),Mumbai,\n Maharashtra 400093, India</string>
-
     <string name="compose_shortcut_short_label">DashBoard</string>
     <string name="compose_shortcut_short_label1">Contact Us</string>
 
     <!-- API Configurations -->
-    <string name="base_url">https://www.influencer.in/API/v4/</string>
+    <string name="base_url">https://www.influencer.in/API/v5/</string>
 
     <string name="device_details_url">androidRegistration1.php</string>
     <string name="regsitration_one_url">androidUserRegister.php</string>
@@ -81,6 +80,8 @@
     <string name="apply_camp_with_quote_url">applyCampaign.php</string>
     <string name="apply_camp_without_quote_url">applyCampaignwithoutquote.php</string>
 
+    <string name="live_Camp_detail">liveCampaignDetail.php</string>
+    <string name="camp_brief">campaignBrief.php</string>
     <string name="transaction_history_url">transactionhistory.php</string>
     <string name="paytm_recharge_url">gratification.php</string>
     <string name="wallet_balance_url">checkwalletbalance.php</string>
@@ -90,7 +91,12 @@
     <string name="userInfo_url">updateCustomerDetails.php</string>
     <string name="add">ADD    </string>
 
+
     <string name="facebook_app_id">113468599289511</string>
+
+    <string name="FACEBOOK_APP_ID">273701626325639</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">[ACCOUNT_KIT_CLIENT_TOKEN]</string>
+
     <string name="fb_login_protocol_scheme">fb113468599289511</string>
 
 

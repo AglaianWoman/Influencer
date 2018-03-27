@@ -1,5 +1,6 @@
 package com.socialbeat.influencer;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -28,15 +29,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class AllCampDetailsPast extends AppCompatActivity {
 
@@ -45,15 +45,15 @@ public class AllCampDetailsPast extends AppCompatActivity {
     final Context context = this;
     Boolean isInternetPresent = false;
     ConnectionDetector cd;
-    Button campaignclosed;
+    String ssuccess,smessage,scampImg ,scampName,scampShortNote,scampLongNote,scampCat,scampGoal,scampDos,scampDont,scampBacklink,
+            scampTag,scampid,scampApplyTill,scampRewards,scampRewardType,sfixedamount,scampAppliedStatus;
+    Button applynow,alreadyapplied,campaignclosed,approved,notapproved,submit,close;
     TextView campName,campShortNote,campCat,campLongNote,campGoal,campDos,campDont,campBacklink,
             campTag,campid,campApplyTill,campRewards,campRewardType,fixedamount,conditiontext,cancel,infotext;
     ImageView campImg;
     EditText famtval;
-
     boolean flg = true;
-    String famt,cid,cdcampImg,cdcampName,cdcampShortNote,cdcampCat,cdcampLongNote,cdcampGoal,cdcampDos,cdcampDont,cdcampBacklink,
-            cdcampTag,cdcampid,cdcampApplyTill,cdcampRewards,cdcampRewardType,cdfixedamount,TAG,campaignid,campaignname;
+    String famt,cid,cdcampid,cdcampRewardType,cdfixedamount,TAG;
     int first,second;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,36 +61,16 @@ public class AllCampDetailsPast extends AppCompatActivity {
         setContentView(R.layout.allcampdetails);
         SharedPreferences prfs = getSharedPreferences("CID_VALUE", Context.MODE_PRIVATE);
         cid = prfs.getString("valueofcid", "");
-//        if(cid.length()!=0){
-//            setContentView(R.layout.allcampdetails);
-//        }else{
-//            // setContentView(R.layout.allcampdetails1);
-//        }
         //bundle values from Campain Fragment
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
 
-            cdcampImg = extras.getString("campImg");
-            cdcampName = extras.getString("campName");
-            cdcampShortNote = extras.getString("campShortNote");
-            cdcampCat = extras.getString("campCat");
-            cdcampLongNote = extras.getString("campLongNote");
-            cdcampGoal = extras.getString("campGoal");
-            cdcampDos = extras.getString("campDos");
-            cdcampDont = extras.getString("campDont");
-            cdcampBacklink = extras.getString("campBacklink");
-            cdcampTag = extras.getString("campTag");
             cdcampid = extras.getString("campid");
-            cdcampApplyTill = extras.getString("campApplyTill");
-            cdcampRewards = extras.getString("campRewards");
-            cdcampRewardType = extras.getString("campRewardType");
-            cdfixedamount = extras.getString("fixedamount");
         }
 
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle(cdcampName);
 
         cd = new ConnectionDetector(getApplicationContext());
         isInternetPresent = cd.isConnectingToInternet();
@@ -100,74 +80,32 @@ public class AllCampDetailsPast extends AppCompatActivity {
 
         // Displaying all values on the screen
 
-        campName = (TextView) findViewById(R.id.campName);
-        campShortNote = (TextView) findViewById(R.id.campShortNote);
-        campCat = (TextView) findViewById(R.id.campCat);
-        campLongNote = (TextView) findViewById(R.id.campLongNote);
-        campGoal = (TextView) findViewById(R.id.campGoal);
-        campDos = (TextView) findViewById(R.id.campDos);
-        campDont = (TextView) findViewById(R.id.campDont);
-        campBacklink = (TextView) findViewById(R.id.campBacklink);
-        campTag = (TextView) findViewById(R.id.campTag);
-        campid = (TextView) findViewById(R.id.campid);
-        campApplyTill = (TextView) findViewById(R.id.campApplyTill);
-        campRewards = (TextView) findViewById(R.id.campRewards);
-        campRewardType = (TextView) findViewById(R.id.campRewardType);
-        fixedamount = (TextView) findViewById(R.id.fixedamount);
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
-        campImg = (ImageView) findViewById(R.id.campImg);
-        campaignclosed = (Button) findViewById(R.id.campaignclosed);
-        campImg.setImageResource(R.mipmap.influencerlistimg);
-
-
-        new DownloadImageTask(campImg).execute(cdcampImg);
-        campName.setText(cdcampName);
-        Spanned sp = Html.fromHtml( cdcampShortNote );
-        campShortNote.setText(sp);
-        campShortNote.setMovementMethod(LinkMovementMethod.getInstance());
-        campCat.setText(cdcampCat);
-        Spanned sp1 = Html.fromHtml( cdcampLongNote );
-        campLongNote.setText(sp1);
-        campLongNote.setMovementMethod(LinkMovementMethod.getInstance());
-
-        campGoal.setText(cdcampGoal);
-
-        Spanned sp2 = Html.fromHtml( cdcampDos );
-        campDos.setText(sp2);
-        campDos.setMovementMethod(LinkMovementMethod.getInstance());
-
-        Spanned sp3 = Html.fromHtml( cdcampDont );
-        campDont.setText(sp3);
-        campDont.setMovementMethod(LinkMovementMethod.getInstance());
-
-        Spanned sp4 = Html.fromHtml( cdcampBacklink );
-        campBacklink.setText(sp4);
-        campBacklink.setMovementMethod(LinkMovementMethod.getInstance());
-
-        Spanned sp5 = Html.fromHtml( cdcampTag );
-        campTag.setText(sp5);
-        campTag.setMovementMethod(LinkMovementMethod.getInstance());
-
-        campid.setText(cdcampid);
-        campApplyTill.setText(cdcampApplyTill);
-        campRewards.setText(cdcampRewards);
-        campRewardType.setText(cdcampRewardType);
-        fixedamount.setText(cdfixedamount);
-
-        System.out.println("cfixedamount value  :"+ cdfixedamount);
-        if (cdfixedamount.length()>0) {
-            fixedamount.setText("Maximum amount Rs : " + cdfixedamount);
-        }else{
-            fixedamount.setText("No Quote Amount Condition for this Campaign.");
-        }
-
-        campaignid =campid.getText().toString();
-        campaignname =campName.getText().toString();
+        campName = findViewById(R.id.campName);
+        campShortNote = findViewById(R.id.campShortNote);
+        campCat = findViewById(R.id.campCat);
+        campLongNote = findViewById(R.id.campLongNote);
+        campGoal = findViewById(R.id.campGoal);
+        campDos = findViewById(R.id.campDos);
+        campDont = findViewById(R.id.campDont);
+        campBacklink = findViewById(R.id.campBacklink);
+        campTag = findViewById(R.id.campTag);
+        campid = findViewById(R.id.campid);
+        campApplyTill = findViewById(R.id.campApplyTill);
+        campRewards = findViewById(R.id.campRewards);
+        campRewardType = findViewById(R.id.campRewardType);
+        fixedamount = findViewById(R.id.fixedamount);
+        coordinatorLayout = findViewById(R.id.coordinatorLayout);
+        campImg = findViewById(R.id.campImg);
+        campaignclosed = findViewById(R.id.campaignclosed);
+        alreadyapplied = findViewById(R.id.alreadyapplied);
+        applynow = findViewById(R.id.applynow);
+        approved = findViewById(R.id.approved);
+        notapproved = findViewById(R.id.notapproved);
 
         if(cid.length() != 0) {
-            String APPLY_URL = getResources().getString(R.string.base_url)+getResources().getString(R.string.applied_list_url)+"?cid=" + cid + "&campid=" + cdcampid + "";
-            Log.v("APPLY URL :",APPLY_URL);
-            new JSONAsyncTask(APPLY_URL).execute();
+            String APPLY_URL = getResources().getString(R.string.base_url) + getResources().getString(R.string.live_Camp_detail) + "?cid=" + cid + "&campid=" + cdcampid + "";
+            Log.v("APPLY URL :", APPLY_URL);
+            new JSONAsyncTask1(APPLY_URL).execute();
         }
 
         campaignclosed.setOnClickListener(new View.OnClickListener() {
@@ -176,15 +114,13 @@ public class AllCampDetailsPast extends AppCompatActivity {
                 Toast.makeText(AllCampDetailsPast.this, "This Campaign is closed already.", Toast.LENGTH_LONG).show();
             }
         });
+    }
 
-        }
-
-
-    class JSONAsyncTask extends AsyncTask<String, Void, String> {
+    class JSONAsyncTask1 extends AsyncTask<String, Void, String> {
 
         String url;
         String response = "";
-        JSONAsyncTask(String url) {
+        JSONAsyncTask1(String url) {
             this.url = url;
         }
 
@@ -227,7 +163,7 @@ public class AllCampDetailsPast extends AppCompatActivity {
             super.onPreExecute();
             pdia = new ProgressDialog(AllCampDetailsPast.this);
             pdia.setIcon(R.mipmap.ac_icon);
-            pdia.setTitle(cdcampName+" Campaign");
+            //pdia.setTitle(cdcampName+" Campaign");
             pdia.setMessage( "Loading, please wait...");
             pdia.setCancelable(false);
             pdia.show();
@@ -244,17 +180,123 @@ public class AllCampDetailsPast extends AppCompatActivity {
             pdia.dismiss();
             try {
                 JSONObject json = new JSONObject(result);
-                String responsemessage = json.getString("message").toString();
-                //Toast.makeText(AllCampDetailsLive.this, responsemessage, Toast.LENGTH_LONG).show();
-                System.out.println(responsemessage);
-                if(responsemessage.equals("Not applied")) {
+
+                ssuccess = json.getString("success");
+                smessage = json.getString("message");
+                scampImg = json.getString("campImg");
+                scampName = json.getString("campName");
+                scampShortNote = json.getString("campShortNote");
+                scampLongNote = json.getString("campLongNote");
+                scampCat = json.getString("campCat");
+                scampGoal = json.getString("campGoal");
+                scampDos = json.getString("campDos");
+                scampDont = json.getString("campDont");
+                scampBacklink = json.getString("campBacklink");
+                scampTag = json.getString("campTag");
+                scampid = json.getString("campid");
+                scampApplyTill = json.getString("campApplyTill");
+                scampRewards = json.getString("campRewards");
+                scampRewardType = json.getString("campRewardType");
+                sfixedamount = json.getString("fixedamount");
+                scampAppliedStatus = json.getString("campAppliedStatus");
+
+                System.out.println(scampAppliedStatus);
+                if(scampAppliedStatus.equalsIgnoreCase("new")){
+                    applynow.setVisibility(View.VISIBLE);
                     campaignclosed.setVisibility(View.INVISIBLE);
+                    alreadyapplied.setVisibility(View.INVISIBLE);
+                    approved.setVisibility(View.INVISIBLE);
+                    notapproved.setVisibility(View.INVISIBLE);
                 }
-                else if(responsemessage .equals("Applied")){
+                else if(scampAppliedStatus .equalsIgnoreCase("Applied")){
+                    alreadyapplied.setVisibility(View.VISIBLE);
+                    applynow.setVisibility(View.INVISIBLE);
                     campaignclosed.setVisibility(View.INVISIBLE);
+                    approved.setVisibility(View.INVISIBLE);
+                    notapproved.setVisibility(View.INVISIBLE);
                 }
-                else if(responsemessage .equals("Campaign closed")){
+                else if(scampAppliedStatus .equalsIgnoreCase("Campaign closed")){
                     campaignclosed.setVisibility(View.VISIBLE);
+                    alreadyapplied.setVisibility(View.INVISIBLE);
+                    applynow.setVisibility(View.INVISIBLE);
+                    approved.setVisibility(View.INVISIBLE);
+                    notapproved.setVisibility(View.INVISIBLE);
+                }
+                else if(scampAppliedStatus .equalsIgnoreCase("Approved")){
+                    approved.setVisibility(View.VISIBLE);
+                    campaignclosed.setVisibility(View.INVISIBLE);
+                    alreadyapplied.setVisibility(View.INVISIBLE);
+                    applynow.setVisibility(View.INVISIBLE);
+                    notapproved.setVisibility(View.INVISIBLE);
+                }
+                else if(scampAppliedStatus .equalsIgnoreCase("Not approved")){
+                    notapproved.setVisibility(View.VISIBLE);
+                    campaignclosed.setVisibility(View.INVISIBLE);
+                    alreadyapplied.setVisibility(View.INVISIBLE);
+                    applynow.setVisibility(View.INVISIBLE);
+                    approved.setVisibility(View.INVISIBLE);
+                }
+
+                campid.setText(scampid);
+
+                campImg.setImageResource(R.mipmap.influencerlistimg);
+                new DownloadImageTask(campImg).execute(scampImg);
+
+                Spanned spname = Html.fromHtml( scampName );
+                campName.setText(spname);
+                campName.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned spcat = Html.fromHtml( scampCat );
+                campCat.setText(spcat);
+                campCat.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned spsnote = Html.fromHtml( scampShortNote );
+                campShortNote.setText(spsnote);
+                campShortNote.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned splnote = Html.fromHtml( scampLongNote );
+                campLongNote.setText(splnote);
+                campLongNote.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned spgoal = Html.fromHtml( scampGoal );
+                campGoal.setText(spgoal);
+                campGoal.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned spdos = Html.fromHtml( scampDos );
+                campDos.setText(spdos);
+                campDos.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned spdonts = Html.fromHtml( scampDont );
+                campDont.setText(spdonts);
+                campDont.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned spapply = Html.fromHtml( scampApplyTill );
+                campApplyTill.setText(spapply);
+                campApplyTill.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned spreward = Html.fromHtml( scampRewards );
+                campRewards.setText(spreward);
+                campRewards.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned sprtype = Html.fromHtml( scampRewardType );
+                campRewardType.setText(sprtype);
+                campRewardType.setMovementMethod(LinkMovementMethod.getInstance());
+
+                Spanned sptag = Html.fromHtml( scampTag );
+                campTag.setText(sptag);
+                campTag.setMovementMethod(LinkMovementMethod.getInstance());
+
+                String link ="<a href="+scampBacklink+">"+ scampBacklink +" </a>" ;
+                Spanned splink = Html.fromHtml( link );
+                campBacklink.setText(splink);
+                campBacklink.setMovementMethod(LinkMovementMethod.getInstance());
+
+                fixedamount.setText(sfixedamount);
+                System.out.println("cfixedamount value  :"+ sfixedamount);
+                if (sfixedamount.length()>0) {
+                    fixedamount.setText("Maximum amount Rs : " + sfixedamount);
+                }else{
+                    fixedamount.setText("No Quote Amount Condition for this Campaign.");
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -265,35 +307,112 @@ public class AllCampDetailsPast extends AppCompatActivity {
     }
 
 
+    @SuppressLint("StaticFieldLeak")
+    class JSONAsyncTask extends AsyncTask<String, Void, String> {
 
-private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-    ImageView bmImage;
-    public DownloadImageTask(ImageView bmImage) {
-        this.bmImage = bmImage;
-    }
-    protected Bitmap doInBackground(String... urls) {
-        String urldisplay = urls[0];
-        Bitmap mIcon11 = null;
-        try {
-            InputStream in = new URL(urldisplay).openStream();
-            mIcon11 = BitmapFactory.decodeStream(in);
-        } catch (Exception e) {
-            Log.e("Error", e.getMessage());
-            e.printStackTrace();
-            MyApplication.getInstance().trackException(e);
-            Log.e(TAG, "Exception: " + e.getMessage());
+        String url;
+        String response = "";
+        JSONAsyncTask(String url) {
+            this.url = url;
         }
-        return mIcon11;
+
+        public String excutePost(String targetURL, String urlParameters) {
+            HttpURLConnection connection = null;
+            try {
+                //Create connection
+                URL url = new URL(targetURL);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+                connection.setRequestProperty("Content-Type","application/json");
+                connection.setUseCaches(false);
+                connection.setDoOutput(true);
+
+                //Get Response
+                InputStream is = connection.getInputStream();
+                BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+                StringBuilder response = new StringBuilder(); // or StringBuffer if not Java 5+
+                String line;
+                while ((line = rd.readLine()) != null) {
+                    response.append(line);
+                    response.append('\r');
+                }
+                rd.close();
+                return response.toString();
+            } catch (Exception e) {
+                e.printStackTrace();
+                MyApplication.getInstance().trackException(e);
+                Log.e(TAG, "Exception: " + e.getMessage());
+                return null;
+            } finally {
+                if (connection != null) {
+                    connection.disconnect();
+                }
+            }
+        }
+        private ProgressDialog pdia;
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+            pdia = new ProgressDialog(AllCampDetailsPast.this);
+            pdia.setMessage("Please Wait...");
+            pdia.show();
+            pdia.setCancelable(false);
+        }
+
+        @Override
+        protected String doInBackground(String... urls) {
+            url = url.replaceAll(" ", "%20");
+            return excutePost(url,"");
+        }
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            pdia.dismiss();
+            try {
+                JSONObject json = new JSONObject(result);
+                String responsemessage = json.getString("message").toString();
+                Toast.makeText(AllCampDetailsPast.this, responsemessage, Toast.LENGTH_LONG).show();
+                finish();
+            } catch (JSONException e) {
+                e.printStackTrace();
+                MyApplication.getInstance().trackException(e);
+                Log.e(TAG, "Exception: " + e.getMessage());
+            }
+        }
     }
-    protected void onPostExecute(Bitmap result) {
-        bmImage.setImageBitmap(result);
+
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+                MyApplication.getInstance().trackException(e);
+                Log.e(TAG, "Exception: " + e.getMessage());
+            }
+            return mIcon11;
+        }
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
+        }
     }
-}
 
     @Override
     public void onBackPressed() {
         // code here to show dialog
-         super.onBackPressed();
+        // super.onBackPressed();  // optional depending on your needs
+        Intent intent  = new Intent(this, NewHomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     @Override

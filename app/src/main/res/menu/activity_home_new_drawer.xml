@@ -32,6 +32,10 @@
             android:id="@+id/nav_contactus"
             android:icon="@mipmap/mails"
             android:title="Contact Us" />
+        <!--<item-->
+            <!--android:id="@+id/nav_update"-->
+            <!--android:icon="@mipmap/updatecheck"-->
+            <!--android:title="Check update" />-->
         <item
             android:id="@+id/nav_logout"
             android:icon="@mipmap/out"

@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -41,6 +42,7 @@ public class MyCampaignsFragment extends AppCompatActivity {
     ListView lv;
     String cid,campid,campname,campapplieddate,campappliedstatus,camppaymentstatus,campdeliverystatus,bloglink,tweetlink,campaignquote;
     Boolean isInternetPresent = false;
+   // LinearLayout applied_status;
     // Connection detector class
     ConnectionDetector cd;
     // URL to get contacts JSON
@@ -79,13 +81,14 @@ public class MyCampaignsFragment extends AppCompatActivity {
 
         cd = new ConnectionDetector(MyCampaignsFragment.this);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+       // applied_status  =(LinearLayout)findViewById(R.id.applied_status);
         isInternetPresent = cd.isConnectingToInternet();
         contactList = new ArrayList<HashMap<String, String>>();
 
         if (cid.length() != 0) {
             if (isInternetPresent) {
                 cid = prfs.getString("valueofcid", "");
-                url = "https://influencer.in/API/v4/appliedList.php?cid=" + cid + "";
+                url = "https://influencer.in/API/v5/appliedList.php?cid=" + cid + "";
                 System.out.println(url);
                 lv = (ListView) findViewById(R.id.appliedcampvalues);
                 // Listview on item click listener
@@ -97,7 +100,7 @@ public class MyCampaignsFragment extends AppCompatActivity {
                         // getting values from selected ListItem
                         String campcid = ((TextView) view.findViewById(R.id.cid))
                                 .getText().toString();
-                        String ccampid = ((TextView) view.findViewById(R.id.campid))
+                        final String ccampid = ((TextView) view.findViewById(R.id.campid))
                                 .getText().toString();
                         String ccampname = ((TextView) view.findViewById(R.id.campname))
                                 .getText().toString();
@@ -105,16 +108,41 @@ public class MyCampaignsFragment extends AppCompatActivity {
                                 .getText().toString();
                         String ccampappliedstatus = ((TextView) view.findViewById(R.id.campappliedstatus))
                                 .getText().toString();
-                        String ccampaignquote = ((TextView) view.findViewById(R.id.campaignquote))
-                                .getText().toString();
+//                        String ccampaignquote = ((TextView) view.findViewById(R.id.campaignquote))
+//                                .getText().toString();
                         String campdeliverystatus = ((TextView) view.findViewById(R.id.campdeliverystatus))
                                 .getText().toString();
                         String ccamppaymentstatus = ((TextView) view.findViewById(R.id.camppaymentstatus))
                                 .getText().toString();
-                        String cbloglink = ((TextView) view.findViewById(R.id.bloglink))
-                                .getText().toString();
-                        String ctweetlink = ((TextView) view.findViewById(R.id.tweetlink))
-                                .getText().toString();
+//                        String cbloglink = ((TextView) view.findViewById(R.id.bloglink))
+//                                .getText().toString();
+//                        String ctweetlink = ((TextView) view.findViewById(R.id.tweetlink))
+//                                .getText().toString();
+
+                        Log.d("Listview Result :",campcid+"  "+ccampid+"  "+ccampname+"  "+ccampapplieddate+"  "+ccampappliedstatus+"  "+ccamppaymentstatus+"  "+campdeliverystatus);
+                       // LinearLayout applied_status  =(LinearLayout)findViewById(R.id.applied_status);
+                        if(ccampappliedstatus .equalsIgnoreCase("Approved")){
+                            Log.d("Apply status :","It is Approved Campaign");
+                                Intent intent = new Intent(MyCampaignsFragment.this, CampBrief.class);
+                                Bundle bund = new Bundle();
+                                bund.putString("campid", ccampid);
+                                intent.putExtras(bund);
+                                startActivity(intent);
+                        }else if(ccampappliedstatus .equalsIgnoreCase("Pending")){
+                            Log.d("Apply status :","It is Pending Campaign");
+                            Intent intent = new Intent(MyCampaignsFragment.this, AllCampDetailsLive.class);
+                            Bundle bund = new Bundle();
+                            bund.putString("campid", ccampid);
+                            intent.putExtras(bund);
+                            startActivity(intent);
+                        }else if(ccampappliedstatus .equalsIgnoreCase("Not approved")){
+                            Log.d("Apply status :","It is Pending Campaign");
+                            Intent intent = new Intent(MyCampaignsFragment.this, AllCampDetailsLive.class);
+                            Bundle bund = new Bundle();
+                            bund.putString("campid", ccampid);
+                            intent.putExtras(bund);
+                            startActivity(intent);
+                        }
                     }
                 });
                 // Calling async task to get json
@@ -247,9 +275,24 @@ public class MyCampaignsFragment extends AppCompatActivity {
                         contact.put(TAG_CAMPDELIVERYSTATUS, campdeliverystatus);
                         contact.put(TAG_CAMPBLOGLINK, bloglink);
                         contact.put(TAG_CAMPTWEETLINK, tweetlink);
-
                         // adding contact to contact list
                         contactList.add(contact);
+
+//                        if (campappliedstatus .equalsIgnoreCase("Approved")){
+//                            Log.d("Camp Apply status :",campappliedstatus);
+////                        applied_status.setOnClickListener(new View.OnClickListener() {
+////                            @Override
+////                            public void onClick(View v) {
+//////                                Intent intent = new Intent(MyCampaignsFragment.this, AllCampDetailsLive.class);
+//////                                Bundle bund = new Bundle();
+//////                                bund.putString("campid", campid);
+//////                                intent.putExtras(bund);
+//////                                startActivity(intent);
+////                            }
+////                        });
+//                    }else{
+//                            Log.d("Camp Apply status :",campappliedstatus);
+//                        }
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
