@@ -154,6 +154,7 @@ public class AllCampDetailsPast extends AppCompatActivity {
                 if (connection != null) {
                     connection.disconnect();
                 }
+
             }
         }
         private ProgressDialog pdia;

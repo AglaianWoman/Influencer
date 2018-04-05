@@ -104,21 +104,21 @@ public class SocialMediaAuthentication extends AppCompatActivity {
         //getting customer cid value in shared preference
         SharedPreferences prfs = getSharedPreferences("CID_VALUE", Context.MODE_PRIVATE);
         cid = prfs.getString("valueofcid", "");
-        loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton = findViewById(R.id.login_button);
         //fblogoutButton = (Button) findViewById(R.id.logout_button);
-        tvuserid = (TextView) findViewById(R.id.tvuserid);
-        tvusername = (TextView) findViewById(R.id.tvusername);
-        tvuseremail = (TextView) findViewById(R.id.tvuseremail);
-        tvusergender = (TextView) findViewById(R.id.tvusergender);
-        tvuserbirthday = (TextView) findViewById(R.id.tvuserbirthday);
-        tvuserabout = (TextView) findViewById(R.id.tvuserabout);
-        fb_profileimage = (ImageView) findViewById(R.id.fb_profileimage);
+        tvuserid = findViewById(R.id.tvuserid);
+        tvusername = findViewById(R.id.tvusername);
+        tvuseremail = findViewById(R.id.tvuseremail);
+        tvusergender = findViewById(R.id.tvusergender);
+        tvuserbirthday = findViewById(R.id.tvuserbirthday);
+        tvuserabout = findViewById(R.id.tvuserabout);
+        fb_profileimage = findViewById(R.id.fb_profileimage);
 
         callbackManager = CallbackManager.Factory.create();
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_location"));
 //        loginButton.setReadPermissions("accounts");
 
-        list = (ListView) findViewById(R.id.pagevalues);
+        list = findViewById(R.id.pagevalues);
         // Listview on item click listener
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -166,21 +166,19 @@ public class SocialMediaAuthentication extends AppCompatActivity {
                                         JSONObject accounts = object.getJSONObject("accounts");
                                         JSONArray data = accounts.getJSONArray("data");
                                         for (int i=0;i<data.length();i++){
-//                                            Log.i("value of Id : ",data.getJSONObject(i).getString("id"));
-//                                            Log.i("value of Name : ",data.getJSONObject(i).getString("name"));
-//                                            Log.i("value of About : ",data.getJSONObject(i).getString("about"));
-//                                            Log.i("value of Fan Count : ",data.getJSONObject(i).getString("fan_count"));
-//                                            Log.i("value of Token : ",data.getJSONObject(i).getString("access_token"));
+                                            Log.i("value of Id : ",data.getJSONObject(i).getString("id"));
+                                            Log.i("value of Name : ",data.getJSONObject(i).getString("name"));
+                                            Log.i("value of About : ",data.getJSONObject(i).getString("about"));
+                                            Log.i("value of Fan Count : ",data.getJSONObject(i).getString("fan_count"));
+                                            Log.i("value of Token : ",data.getJSONObject(i).getString("access_token"));
 
                                             pageid = data.getJSONObject(i).getString("id");
                                             pagename = data.getJSONObject(i).getString("name");
                                             pageabout = data.getJSONObject(i).getString("about");
                                             pagefancount = data.getJSONObject(i).getString("fan_count");
                                             pagetoken = data.getJSONObject(i).getString("access_token");
-
                                             // tmp hashmap for single contact
                                             HashMap<String, String> page = new HashMap<String, String>();
-
                                             // adding each child node to HashMap key => value
                                             page.put(TAG_PID,"ID : "+pageid);
                                             page.put(TAG_PNAME,pagename);
@@ -250,8 +248,29 @@ public class SocialMediaAuthentication extends AppCompatActivity {
 //           //     fbloginButton.setVisibility(View.VISIBLE);
 //            }
 //        });
+
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent  = new Intent(this, UserSettings.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent  = new Intent(this, NewHomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

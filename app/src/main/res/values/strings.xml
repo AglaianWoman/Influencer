@@ -92,11 +92,11 @@
     <string name="add">ADD    </string>
 
 
+    <!--<string name="facebook_app_id">113468599289511</string>-->
+    <!--<string name="FACEBOOK_APP_ID">273701626325639</string>-->
     <string name="facebook_app_id">113468599289511</string>
-
-    <string name="FACEBOOK_APP_ID">273701626325639</string>
+    <!--<string name="FACEBOOK_APP_ID">113468599289511</string>-->
     <string name="ACCOUNT_KIT_CLIENT_TOKEN">[ACCOUNT_KIT_CLIENT_TOKEN]</string>
-
     <string name="fb_login_protocol_scheme">fb113468599289511</string>
 
 

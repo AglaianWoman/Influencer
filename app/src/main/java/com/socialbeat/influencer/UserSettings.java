@@ -66,23 +66,23 @@ public class UserSettings extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Settings");
 
-        pname = (TextView) findViewById(R.id.pusername);
-        pemailid = (TextView)findViewById(R.id.pemail);
-        pcity = (TextView)findViewById(R.id.pcity);
-        poverallreach = (TextView)findViewById(R.id.overallreachstatus);
-        pmozrank = (TextView)findViewById(R.id.mozrankstatus);
-        poverallscore = (TextView)findViewById(R.id.overallscorestatus);
-        puserimage = (ImageView) findViewById(R.id.profileimage);
+        pname = findViewById(R.id.pusername);
+        pemailid = findViewById(R.id.pemail);
+        pcity = findViewById(R.id.pcity);
+        poverallreach = findViewById(R.id.overallreachstatus);
+        pmozrank = findViewById(R.id.mozrankstatus);
+        poverallscore = findViewById(R.id.overallscorestatus);
+        puserimage = findViewById(R.id.profileimage);
 
-        coordinatorLayout = (CoordinatorLayout)findViewById(R.id.coordinatorLayout);
-        editprofile = (RelativeLayout)findViewById(R.id.settings_edit_profile);
-        socialmedia = (RelativeLayout)findViewById(R.id.settings_social_media);
-        paymenthistory = (RelativeLayout)findViewById(R.id.settings_payment_history);
-        paymentmethods = (RelativeLayout)findViewById(R.id.settings_payment_method);
-        policy = (RelativeLayout)findViewById(R.id.setting_policy);
-        terms = (RelativeLayout)findViewById(R.id.settings_terms);
-        shareapp = (RelativeLayout)findViewById(R.id.settings_share_app);
-        rateapp = (RelativeLayout)findViewById(R.id.settings_rate_app);
+        coordinatorLayout = findViewById(R.id.coordinatorLayout);
+        editprofile = findViewById(R.id.settings_edit_profile);
+        socialmedia = findViewById(R.id.settings_social_media);
+        paymenthistory = findViewById(R.id.settings_payment_history);
+        paymentmethods = findViewById(R.id.settings_payment_method);
+        policy = findViewById(R.id.setting_policy);
+        terms = findViewById(R.id.settings_terms);
+        shareapp = findViewById(R.id.settings_share_app);
+        rateapp = findViewById(R.id.settings_rate_app);
 
         cd = new ConnectionDetector(this);
         isInternetPresent = cd.isConnectingToInternet();
@@ -103,7 +103,7 @@ public class UserSettings extends AppCompatActivity {
                 snackbar.setActionTextColor(Color.RED);
                 // Changing action button text color
                 View sbView = snackbar.getView();
-                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                TextView textView = sbView.findViewById(android.support.design.R.id.snackbar_text);
                 textView.setTextColor(Color.YELLOW);
                 snackbar.show();
             }
